@@ -1,4 +1,4 @@
-# Página Web Interactiva - Universo Fantástico
+# Página Web Interactiva - Universo Dragon ball
 
 Este proyecto es una **página web interactiva** que busca ofrecer una experiencia inmersiva sobre un universo de aventuras, personajes y curiosidades. El objetivo es captar la atención del usuario mediante animaciones, transiciones suaves y una navegación atractiva.
 
