@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dragon Ball Universe</title>
-    <link rel="icon" href="images/logos/LogoPri.png" type="image/png">
+    <link rel="icon" href="images/logos/LogoZ.png" type="image/png">
 
     <!-- Fuente Oxanium -->
     <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&display=swap" rel="stylesheet">
@@ -21,7 +21,17 @@
     <!-- Menú oculto -->
     <!-- Navbar -->
 <nav class="navbar">
-    <ul>
+    <nav class="navbar hidden"></nav>
+    <div class="logo">
+        <img src="images/logos/LogoPri.png" alt="Logo Dragon Ball">
+    </div>
+     
+    <div class="frase-dinamica-pro" id="frase-dinamica-pro"></div>
+
+    <div class="menu-toggle" id="menu-toggle">
+        &#9776;
+    </div>
+    <ul class="menu" id="menu">
         <li><a href="index.html">Inicio</a></li>
         <li><a href="historia.html">Historia</a></li>
         <li><a href="personajes.html">Personajes</a></li>
@@ -29,6 +39,7 @@
         <li><a href="curiosidades.html">Curiosidades</a></li>
     </ul>
 </nav>
+
 
 
     <!-- Bolas del Dragón -->
@@ -88,6 +99,9 @@
         </div>
     </div>
 </section>
+<a href="#" class="btn-subir" id="btnSubir">
+    <img src="images/extra/FlechaArriba.png" alt="Subir arriba">
+</a>
 
 
 <!-- Sección Personajes Destacados -->
@@ -144,12 +158,13 @@
     </div>
 </section>
 
+
 <!-- Footer -->
 
 <footer class="footer">
     <div class="footer-content">
         <p>Creado por Jhonier Stiven Montaño Castillo</p>
-        <p>Si te gustó esta página, sígueme en <a href="https://github.com/tu_usuario" target="_blank">GitHub</a> y conectemos para más proyectos increíbles.</p>
+        <p>Si te gustó esta página, sígueme en <a href="https://github.com/Jhonier1227" target="_blank">GitHub</a> y conectemos para más proyectos increíbles.</p>
         <p>Esta página es un proyecto fan. Parte de la información y algunas imágenes fueron tomadas de la <a href="https://dragonball.fandom.com/wiki/Main_Page" target="_blank">Dragon Ball Wiki</a>. Todos los derechos pertenecen a sus respectivos dueños.</p>
     </div>
 </footer>
@@ -160,10 +175,13 @@
 
 
 
+<!-- JS Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <!-- JS Librerías -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lenis@1.0.4"></script>
     <script src="js/home.js"></script>
+
 </body>
 </html>

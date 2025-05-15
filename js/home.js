@@ -11,13 +11,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-        document.querySelector('.navbar').classList.add('scrolled');
-    } else {
-        document.querySelector('.navbar').classList.remove('scrolled');
-    }
-});
 
 // Scroll suave cuando hacen clic en el botón "Descubre más"
 document.querySelector('.btn-descubrir').addEventListener('click', function (e) {
@@ -42,6 +35,80 @@ gsap.from(".intro-image img", {
     duration: 1.5,
     ease: "power2.out"
 });
+
+
+ const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+        menu.classList.toggle('show');
+    });
+
+
+    const frasesPro = [
+        "¡El poder está en ti!",
+        "Nunca te rindas, sigue entrenando.",
+        "El límite solo está en tu mente.",
+        "¡Despierta el Super Saiyajin dentro de ti!",
+        "Cada caída te hace más fuerte."
+    ];
+
+    const fraseContainer = document.getElementById('frase-dinamica-pro');
+    let fraseIndex = 0;
+    let charIndex = 0;
+
+    function escribirFrase() {
+        if (charIndex < frasesPro[fraseIndex].length) {
+            fraseContainer.textContent += frasesPro[fraseIndex].charAt(charIndex);
+            charIndex++;
+            setTimeout(escribirFrase, 100);
+        } else {
+            setTimeout(borrarFrase, 3000);
+        }
+    }
+
+    function borrarFrase() {
+        if (charIndex > 0) {
+            fraseContainer.textContent = frasesPro[fraseIndex].substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(borrarFrase, 50);
+        } else {
+            fraseIndex = (fraseIndex + 1) % frasesPro.length;
+            setTimeout(escribirFrase, 500);
+        }
+    }
+
+    // Iniciar la animación
+    escribirFrase();
+
+
+    window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 500) { 
+        navbar.classList.add('visible');
+        navbar.classList.remove('hidden');
+    } else {
+        navbar.classList.add('hidden');
+        navbar.classList.remove('visible');
+    }
+});
+
+function checkNavbarVisibility() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 500) {
+        navbar.classList.add('visible');
+        navbar.classList.remove('hidden');
+    } else {
+        navbar.classList.add('hidden');
+        navbar.classList.remove('visible');
+    }
+}
+
+// Ejecutar al cargar la página
+window.addEventListener('load', checkNavbarVisibility);
+
+// Ejecutar al hacer scroll
+window.addEventListener('scroll', checkNavbarVisibility);
 
 
 
@@ -204,3 +271,29 @@ showSlide(currentSlide);
 
 // Cambia cada 7 segundos
 setInterval(nextSlide, 7000);
+
+const btnSubir = document.getElementById('btnSubir');
+
+function checkBtnSubir() {
+    if (window.scrollY > 500) {
+        btnSubir.classList.add('visible');
+    } else {
+        btnSubir.classList.remove('visible');
+    }
+}
+
+window.addEventListener('scroll', checkBtnSubir);
+window.addEventListener('load', checkBtnSubir);
+
+btnSubir.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+console.log(document.getElementById('btnSubir'));
+console.log("hola mundo")
+
+   
