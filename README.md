@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="images/logos/LogoZ.png" alt="Logo Dragon Ball Web" width="200">
+  <img src="https://i.pinimg.com/originals/3e/b4/60/3eb460f016decf14e6a4f8e6d98ea3d3.png" alt="Logo Dragon Ball Web" width="200">
 </p>
 
 <h1 align="center">✨ Bienvenido al Universo Interactivo de Dragon Ball ✨</h1>
@@ -25,9 +25,10 @@ Este proyecto es un reto personal donde pongo a prueba mis habilidades en **HTML
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" width="50" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" width="50" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="50" />
- 
-  <img src="https://avatars.githubusercontent.com/u/102405248?s=200&v=4" alt="Lenis" width="50" />
+
 </p>
+
+<center>
 
 | Tecnologías        | Descripción                           |
 |--------------------|---------------------------------------|
@@ -38,6 +39,8 @@ Este proyecto es un reto personal donde pongo a prueba mis habilidades en **HTML
 | **Lenis**           | Scroll suave y fluido.               |
 
 ---
+
+</center>
 
 ## 🧩 Estructura Actual del Proyecto
 
@@ -88,16 +91,20 @@ Aquí algunas capturas de cómo va tomando forma el proyecto (formato horizontal
 
 ---
 
-## ✨ Zona de Motivación
+---
 
-> 💥 *"El único límite es el que te pones tú mismo."*  
-> 🚀 *"Sigue avanzando, el progreso no se detiene."*  
-> 🌟 *"Cada línea de código es un paso hacia tus sueños."*  
-> 🔥 *"Cree en tu poder como desarrollador."*  
-> 👊 *"No es magia... es constancia."*  
+<h2 align="center">🚀 Nunca dejes de avanzar</h2>
 
 <p align="center">
-  <img src="https://media.giphy.com/media/3o7qE1YN7aBOFPRw8E/giphy.gif" width="300">
+💥 El progreso no se detiene cuando crees en tu poder,<br>
+🌟 rompes tus propios límites y avanzas con constancia hacia tus sueños.
+</p>
+
+---
+
+<p align="center">
+ <img src="https://i.pinimg.com/originals/43/e1/f2/43e1f27f7fc5d89df025114bc64275c5.gif" width="300">
+
 </p>
 
 ---
