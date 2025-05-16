@@ -3,145 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historia - Proyecto</title>
-    <link rel="stylesheet" href="css/historia.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Historia Completa - Dragon Ball Universe</title>
+
+    <!-- Favicon -->
     <link rel="icon" href="images/logos/LogoZ.png" type="image/png">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- AOS Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+   
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/historia.css">
 </head>
 <body>
 
-    <!-- Menú (igual que en index) -->
-    <!-- Menú PRO -->
-<nav class="navbar navbar-expand-lg custom-navbar">
-    <div class="container d-flex justify-content-between align-items-center">
-        <!-- Logo a la izquierda -->
-        <div class="logo-nav">
-            <img src="images/logos/LogoPri.png" alt="Logo Dragon Ball">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container d-flex justify-content-between align-items-center">
+            <!-- Logo -->
+            <div class="logo-nav">
+                <img src="images/logos/LogoPri.png" alt="Logo Dragon Ball">
+            </div>
+
+            <!-- Frase dinámica -->
+            <div class="frase-dinamica-pro" id="frase-dinamica-pro"></div>
+
+            <!-- Menú -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="historia.html">Historia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="personajes.html">Personajes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="galeria.html">Galería</a></li>
+                    <li class="nav-item"><a class="nav-link" href="curiosidades.html">Curiosidades</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <header class="hero-section">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>Historia Completa</h1>
+            <p>Descubre el origen, evolución y sagas de nuestro universo.</p>
+            <a href="#intro-saga" class="btn-explorar">Explorar Línea de Tiempo</a>
+
+        </div>
+    </header>
+
+    <section class="intro-saga" id="intro-saga">
+    <img src="images/historia/DBPrimero.png" alt="Dragon Ball - Todas las sagas" class="img-fluid">
+</section> 
+
+    <!-- Línea de tiempo -->
+    <section class="timeline" id="timeline">
+        <!-- Ejemplo saga completa -->
+        <div class="timeline-item left">
+            <div class="content">
+                <img src="images/historia/SagaOrigen.png" alt="Saga del Emperador Pilaf">
+                <h3>Saga del Emperador Pilaf</h3>
+                <p>Resumen breve de la saga...</p>
+                <a href="#" class="btn-ver">Ver más</a>
+            </div>
+            <div class="logo-saga right-logo">
+                <img src="images/historia/LogoSagaDePilaf.png" alt= "Logo Saga Pilaf">
+            </div>
         </div>
 
-        <!-- Frase dinámica en el centro -->
-        <div class="frase-dinamica-pro" id="frase-dinamica-pro"></div>
-
-        <!-- Menú a la derecha -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link active" href="historia.html">Historia</a></li>
-                <li class="nav-item"><a class="nav-link" href="personajes.html">Personajes</a></li>
-                <li class="nav-item"><a class="nav-link" href="galeria.html">Galería</a></li>
-                <li class="nav-item"><a class="nav-link" href="curiosidades.html">Curiosidades</a></li>
-            </ul>
+        <div class="timeline-item right">
+            <div class="logo-saga left-logo">
+                <img src="images/historia/LogoSaga21TorneoArtemarciales.png" alt="Logo Saga Torneo 21">
+            </div>
+            <div class="content">
+                <img src="images/historia/Saga21TorneoArte.png" alt="Saga del 21º Torneo de Artes Marciales">
+                <h3>Saga del 21º Torneo de Artes Marciales</h3>
+                <p>Resumen breve de la saga...</p>
+                <a href="#" class="btn-ver">Ver más</a>
+            </div>
         </div>
-    </div>
-</nav>
 
-
-
-
-<!-- Sección de fondo de inicio -->
-<header class="hero-section">
-    <div class="overlay"></div>
-    <div class="hero-content">
-        <h1>Historia Completa</h1>
-        <p>Descubre el origen, evolución y sagas de nuestro universo.</p>
-    </div>
-</header>
-
-<!-- Aquí empieza el resto del contenido -->>
-
-<!-- Sección de historia -->
-<section class="timeline">
-    <div class="timeline-item left">
-        <div class="content">
-            <img src="images/historia/SagaOrigen.png" alt="Saga 1">
-            <h3>Saga del emperador Pilaf</h3>
-            <p>Resumen breve de la saga...</p>
-            <a href="#" class="btn-ver">Ver más</a>
+        <!-- Sagas de prueba (te recomiendo reemplazar por sagas reales al avanzar) -->
+        <div class="timeline-item left">
+            <div class="content">
+                <img src="images/historia/placeholder.png" alt="Saga pendiente">
+                <h3>Saga pendiente</h3>
+                <p>Resumen breve de la saga...</p>
+                <a href="#" class="btn-ver">Ver más</a>
+            </div>
+            <div class="logo-saga right-logo">
+                <img src="images/historia/placeholder-logo.png" alt="Logo saga pendiente">
+            </div>
         </div>
-        <div class="logo-saga right-logo">
-            <img src="images/historia/logoPilaf.png" alt="Logo Pilaf">
-        </div>
-    </div>
 
-    <div class="timeline-item right">
-        <div class="logo-saga left-logo">
-            <img src="images/historia/logoTorneo21.png" alt="Logo Torneo">
+        <div class="timeline-item right">
+            <div class="logo-saga left-logo">
+                <img src="images/historia/placeholder-logo.png" alt="Logo saga pendiente">
+            </div>
+            <div class="content">
+                <img src="images/historia/placeholder.png" alt="Saga pendiente">
+                <h3>Saga pendiente</h3>
+                <p>Resumen breve de la saga...</p>
+                <a href="#" class="btn-ver">Ver más</a>
+            </div>
         </div>
-        <div class="content">
-            <img src="images/historia/Saga21TorneoArte.png" alt="Saga 2">
-            <h3>Saga del 21º Torneo de Artes Marciales</h3>
-            <p>Resumen breve de la saga...</p>
-            <a href="#" class="btn-ver">Ver más</a>
-        </div>
-    </div>
-
-
-     <div class="timeline-item left">
-        <div class="content">
-            <img src="fondo" alt="Saga 1">
-            <h3>texto left</h3>
-            <p>Resumen breve de la saga...</p>
-            <a href="#" class="btn-ver">Ver más</a>
-        </div>
-        <div class="logo-saga right-logo">
-            <img src="logo lado" alt="Logo Pilaf">
-        </div>
-    </div>
-
-
-    <div class="timeline-item right">
-        <div class="logo-saga left-logo">
-            <img src="img" alt="Logo Torneo">
-        </div>
-        <div class="content">
-            <img src="ima" alt="Saga 2">
-            <h3>texto right</h3>
-            <p>Resumen breve de la saga...</p>
-            <a href="#" class="btn-ver">Ver más</a>
-        </div>
-    </div>
-
-    <div class="timeline-item left">
-        <div class="content">
-            <img src="fondo" alt="Saga 1">
-            <h3>texto left</h3>
-            <p>Resumen breve de la saga...</p>
-            <a href="#" class="btn-ver">Ver más</a>
-        </div>
-        <div class="logo-saga right-logo">
-            <img src="logo lado" alt="Logo Pilaf">
-        </div>
-    </div>
-
-    <div class="timeline-item right">
-        <div class="logo-saga left-logo">
-            <img src="img" alt="Logo Torneo">
-        </div>
-        <div class="content">
-            <img src="ima" alt="Saga 2">
-            <h3>texto right</h3>
-            <p>Resumen breve de la saga...</p>
-            <a href="#" class="btn-ver">Ver más</a>
-        </div>
-    </div>
-</section>
-
-
-
+        <!-- Puedes continuar agregando sagas reales aquí -->
+    </section>
 
     <!-- Scripts -->
-    <script src="js/historia.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lenis@1.0.4"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
+    <script src="js/historia.js"></script>
+    <script src="js/global.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
+
 </body>
 </html>

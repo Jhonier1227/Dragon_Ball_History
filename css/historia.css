@@ -1,27 +1,23 @@
+/* Reset básico coherente */
 body {
-    background-color: #000000;
-    font-family: Arial, sans-serif;
-}
-
-/* Tipografía global */
-body {
-    font-family: 'Orbitron', sans-serif;
-}
-
-/* Menú personalizado */
-/* Fuente general coherente al index */
-body, .navbar, .frase-dinamica-pro {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
     font-family: 'Poppins', sans-serif;
+    color: #fff;
+    overflow-x: hidden;
 }
 
-/* Navbar */
+/* Navbar PRO */
 .custom-navbar {
-    background: linear-gradient(90deg, #0f0f0f, #1a1a1a);
+    background: rgba(0, 0, 0, 0.5); /* Fondo negro semi-transparente */
     padding: 15px 20px;
-    box-shadow: 0 0 15px rgba(255, 165, 0, 0.4);
     position: sticky;
     top: 0;
     z-index: 1000;
+    backdrop-filter: blur(10px); /* Efecto vidrio difuminado Pro */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilidad Safari */
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.2); /* Puedes mantener la sombra leve */
 }
 
 .custom-navbar .logo-nav img {
@@ -30,47 +26,40 @@ body, .navbar, .frase-dinamica-pro {
 }
 
 #frase-dinamica-pro {
-    font-family: 'Poppins', sans-serif;
-    color: white;
     font-size: 1.2rem;
     text-align: center;
     animation: fadeIn 1s ease forwards;
-    opacity: 1;
-    transition: opacity 1s ease;
-    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 50px;
+    opacity: 1;
+    transition: opacity 1s ease;
 }
 
+.navbar-nav .nav-link {
+    color: #fff;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #FFA500;
+    transform: scale(1.1);
+}
+
+/* Animación básica */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-.navbar-nav .nav-link {
-    font-family: 'Poppins', sans-serif;
-    color: #fff;
-    transition: color 0.3s, transform 0.3s;
-}
-
-.navbar-nav .nav-link:hover {
-    color: #FFA500;
-    transform: scale(1.1);
-}
-
-.navbar-nav .nav-link.active {
-    color: #FFA500;
-}
-
-
-
-/* Sección Hero con fondo */
+/* Hero Section */
 .hero-section {
     position: relative;
     width: 100%;
     height: 100vh;
-    background: url('../images/historia/PriHisto.jpg') center center/cover no-repeat;
+    background: url('../images/historia/PriHisto.jpg') center center / cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -86,10 +75,9 @@ body, .navbar, .frase-dinamica-pro {
     left: 0;
 }
 
-.hero-section .hero-content {
+.hero-content {
     position: relative;
     z-index: 2;
-    color: white;
 }
 
 .hero-section h1 {
@@ -104,7 +92,6 @@ body, .navbar, .frase-dinamica-pro {
     animation: fadeInUp 1.5s ease;
 }
 
-/* Animaciones suaves */
 @keyframes fadeInDown {
     from { opacity: 0; transform: translateY(-50px); }
     to { opacity: 1; transform: translateY(0); }
@@ -115,13 +102,51 @@ body, .navbar, .frase-dinamica-pro {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Espacio al contenido para no quedar tapado por el menú */
-.contenido-historia {
-    padding-top: 100px;
-    background-color: #111; /* O el color que uses de fondo general */
+.btn-explorar {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #ff9100;
     color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(255, 145, 0, 0.4);
+    transition: background-color 0.3s, transform 0.3s;
 }
 
+.btn-explorar:hover {
+    background-color: #e67e00;
+    transform: scale(1.05);
+}
+
+.intro-saga {
+    width: 100%;
+    text-align: center;
+    background-color: #000; /* Opcional si quieres asegurar fondo negro */
+    padding: 50px 0;
+}
+
+.intro-saga img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px #FFA500);
+    animation: fadeInDown 1s ease;
+}
+.intro-saga img {
+    width: auto;
+    height: 200px; /* Ajusta la altura a tu gusto (puedes probar 300px, 400px, etc.) */
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+    filter: drop-shadow(0 0 10px #FFA500);
+    animation: fadeInDown 1s ease;
+}
+
+
+
+/* Timeline */
 .timeline {
     position: relative;
     margin: 100px auto;
@@ -160,7 +185,6 @@ body, .navbar, .frase-dinamica-pro {
 
 .timeline-item .content {
     background: #1b1b1b;
-    color: #fff;
     padding: 20px;
     border-radius: 15px;
     position: relative;
@@ -179,8 +203,8 @@ body, .navbar, .frase-dinamica-pro {
 .logo-saga {
     position: absolute;
     top: 50%;
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     background: #fff;
     border-radius: 50%;
     padding: 10px;
@@ -188,8 +212,8 @@ body, .navbar, .frase-dinamica-pro {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 3;
     transform: translateY(-50%);
+    z-index: 3;
 }
 
 .logo-saga img {
@@ -198,18 +222,17 @@ body, .navbar, .frase-dinamica-pro {
     object-fit: contain;
 }
 
-/* Logo del lado derecho de la línea (cuando la tarjeta está a la izquierda) */
 .right-logo {
     left: 100%;
-    margin-left: 300px;
+    margin-left: 200px;
 }
 
-/* Logo del lado izquierdo de la línea (cuando la tarjeta está a la derecha) */
 .left-logo {
     right: 100%;
-    margin-right: 300px;
+    margin-right: 200px;
 }
 
+/* Botón Ver más */
 .btn-ver {
     display: inline-block;
     margin-top: 10px;
@@ -218,14 +241,15 @@ body, .navbar, .frase-dinamica-pro {
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
-    transition: 0.3s;
+    transition: background-color 0.3s;
 }
 
 .btn-ver:hover {
     background-color: #e67e00;
 }
 
-@media(max-width: 768px) {
+/* Responsividad */
+@media (max-width: 768px) {
     .timeline::after {
         left: 20px;
         transform: none;
@@ -242,12 +266,7 @@ body, .navbar, .frase-dinamica-pro {
     .logo-saga {
         left: 20px !important;
         right: auto !important;
-        transform: translateY(-50%);
         width: 80px;
         height: 80px;
     }
 }
-
-
-
-
