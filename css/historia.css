@@ -9,41 +9,58 @@ body {
 }
 
 /* Menú personalizado */
+/* Fuente general coherente al index */
+body, .navbar, .frase-dinamica-pro {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar */
 .custom-navbar {
-    position: fixed;
+    background: linear-gradient(90deg, #0f0f0f, #1a1a1a);
+    padding: 15px 20px;
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.4);
+    position: sticky;
     top: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.95);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     z-index: 1000;
-    transition: all 0.3s ease;
 }
 
-/* Efectos en los links */
-.custom-navbar .nav-link {
-    font-weight: 600;
-    text-transform: uppercase;
-    transition: color 0.3s ease, transform 0.3s ease;
+.custom-navbar .logo-nav img {
+    height: 60px;
+    filter: drop-shadow(0 0 5px #FFA500);
 }
 
-.custom-navbar .nav-link:hover {
-    color: #ffc107;
+#frase-dinamica-pro {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    animation: fadeIn 1s ease forwards;
+    opacity: 1;
+    transition: opacity 1s ease;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.navbar-nav .nav-link {
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #FFA500;
     transform: scale(1.1);
 }
 
-.custom-navbar .nav-link.active {
-    color: #ff5722;
-}
-
-.navbar-brand {
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: #fff;
-    transition: transform 0.3s ease;
-}
-
-.navbar-brand:hover {
-    transform: scale(1.05);
+.navbar-nav .nav-link.active {
+    color: #FFA500;
 }
 
 
