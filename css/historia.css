@@ -1,0 +1,236 @@
+body {
+    background-color: #000000;
+    font-family: Arial, sans-serif;
+}
+
+/* Tipografía global */
+body {
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Menú personalizado */
+.custom-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+/* Efectos en los links */
+.custom-navbar .nav-link {
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover {
+    color: #ffc107;
+    transform: scale(1.1);
+}
+
+.custom-navbar .nav-link.active {
+    color: #ff5722;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+
+
+/* Sección Hero con fondo */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('../images/historia/PriHisto.jpg') center center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-section .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    top: 0;
+    left: 0;
+}
+
+.hero-section .hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    animation: fadeInDown 1s ease;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    animation: fadeInUp 1.5s ease;
+}
+
+/* Animaciones suaves */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Espacio al contenido para no quedar tapado por el menú */
+.contenido-historia {
+    padding-top: 100px;
+    background-color: #111; /* O el color que uses de fondo general */
+    color: #fff;
+}
+
+.timeline {
+    position: relative;
+    margin: 100px auto;
+    padding: 50px 0;
+    width: 90%;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background: #ff9100;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+
+.timeline-item.left {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item.right {
+    left: 50%;
+    text-align: left;
+}
+
+.timeline-item .content {
+    background: #1b1b1b;
+    color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    position: relative;
+    display: inline-block;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    z-index: 2;
+}
+
+.timeline-item .content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.logo-saga {
+    position: absolute;
+    top: 50%;
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    transform: translateY(-50%);
+}
+
+.logo-saga img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Logo del lado derecho de la línea (cuando la tarjeta está a la izquierda) */
+.right-logo {
+    left: 100%;
+    margin-left: 300px;
+}
+
+/* Logo del lado izquierdo de la línea (cuando la tarjeta está a la derecha) */
+.left-logo {
+    right: 100%;
+    margin-right: 300px;
+}
+
+.btn-ver {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #ff9100;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-ver:hover {
+    background-color: #e67e00;
+}
+
+@media(max-width: 768px) {
+    .timeline::after {
+        left: 20px;
+        transform: none;
+    }
+
+    .timeline-item,
+    .timeline-item.left,
+    .timeline-item.right {
+        width: 100%;
+        padding-left: 60px;
+        text-align: left;
+    }
+
+    .logo-saga {
+        left: 20px !important;
+        right: auto !important;
+        transform: translateY(-50%);
+        width: 80px;
+        height: 80px;
+    }
+}
+
+
+
+
