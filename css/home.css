@@ -1,9 +1,15 @@
 /* Fuente global */
 body {
-    font-family: 'Bangers', cursive;
+    font-family:'Poppins', sans-serif;
     margin: 0;
     padding: 0;
 }
+
+
+h1, h2 {
+    font-family: 'Luckiest Guy', cursive;
+}
+
 
 /* Menú oculto */
 /* Estilo del navbar */
@@ -203,6 +209,16 @@ body {
     color: #fff;
     transition: background 1s ease-in-out;
 }
+
+#titulo-animado {
+font-family: 'Luckiest Guy', cursive;
+    font-size: 4rem;
+    text-shadow: 3px 3px 10px #000;
+    color: #FFA500;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 8px #000;
+}
+
 
 .overlay {
     position: absolute;

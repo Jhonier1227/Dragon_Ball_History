@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'SaiyanSans';
+    src: url('../fonts/saiyan-sans/Saiyan-Sans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SaiyanSansLeft';
+    src: url('../fonts/saiyan-sans/Saiyan-Sans Left Oblique.ttf') format('truetype');
+    font-weight: normal;
+    font-style: oblique;
+}
+
+@font-face {
+    font-family: 'SaiyanSansRight';
+    src: url('../fonts/saiyan-sans/Saiyan-Sans Right Oblique.ttf') format('truetype');
+    font-weight: normal;
+    font-style: oblique;
+}
