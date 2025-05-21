@@ -2,7 +2,7 @@
   <img src="https://i.pinimg.com/originals/3e/b4/60/3eb460f016decf14e6a4f8e6d98ea3d3.png" alt="Logo Dragon Ball Web" width="200">
 </p>
 
-<h1 align="center">✨ Bienvenido al Universo Interactivo de Dragon Ball ✨</h1>
+<h1 align="center">✨ Bienvenido al Universo Interactivo de Dragon Ball History ✨</h1>
 
 Explora un universo lleno de aventuras, personajes icónicos y curiosidades, todo desde una página web interactiva que ofrece una **experiencia inmersiva, dinámica y moderna**.  
 Este proyecto es un reto personal donde pongo a prueba mis habilidades en **HTML, CSS y JavaScript puro**, integrando **GSAP** y **Lenis** para una experiencia visual de alto nivel.
