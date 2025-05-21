@@ -272,3 +272,24 @@ body {
         height: 80px;
     }
 }
+
+
+.intro-z-logo {
+  .intro-z-logo {
+  position: relative;
+  z-index: 5;
+  background-color: #000; /* Oculta línea detrás */
+  padding: 30px 0;
+  margin-bottom: -60px; /* Que se superponga un poco */
+  text-align: center;
+}
+
+}
+
+.intro-z-logo img {
+  max-width: 400px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #FFA500);
+  position: relative;
+  z-index: 5;
+}
