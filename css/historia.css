@@ -49,6 +49,51 @@ body {
     transform: scale(1.1);
 }
 
+
+/* === MODO CLARO === */
+body.light-mode {
+    background-color: #f8f9fa;
+    color: #111;
+}
+
+.light-mode .custom-navbar {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.light-mode .custom-navbar .nav-link {
+    color: #111;
+}
+
+.light-mode .custom-navbar .nav-link:hover,
+.light-mode .custom-navbar .nav-link.active {
+    color: #ff9100;
+}
+
+.light-mode .timeline-item .content {
+    background-color: #ffffff;
+    color: #111;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.light-mode .logo-saga {
+    background-color: #f4f4f4;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.light-mode .btn-explorar,
+.light-mode .btn-ver {
+    background-color: #ff9100;
+    color: #fff;
+}
+
+.light-mode .btn-explorar:hover,
+.light-mode .btn-ver:hover {
+    background-color: #e67e00;
+}
+
+
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
@@ -223,7 +268,7 @@ body {
 }
 
 .logo-saga img {
-    width: 100%;
+    width: 150px;
     height: auto;
     object-fit: contain;
 }
@@ -270,7 +315,7 @@ body {
     .logo-saga {
         left: 20px !important;
         right: auto !important;
-        width: 100px;
+        width: 150px;
         height: 100px;
         margin: 0;
     }
