@@ -10,52 +10,83 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/historia.css">
+    <link rel="stylesheet" href="css/global.css">
 </head>
 <body>
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg custom-navbar">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div class="logo-nav">
-                <img src="images/logos/LogoPri.png" alt="Logo Dragon Ball">
-            </div>
-            <div class="frase-dinamica-pro" id="frase-dinamica-pro"></div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="historia.html">Historia</a></li>
-                    <li class="nav-item"><a class="nav-link" href="personajes.html">Personajes</a></li>
-                    <li class="nav-item"><a class="nav-link" href="galeria.html">Galería</a></li>
-                    <li class="nav-item"><a class="nav-link" href="curiosidades.html">Curiosidades</a></li>
-                </ul>
-                 <button id="modo-toggle" class="btn btn-dark" style="position: fixed; bottom: 20px; right: 20px; z-index: 999;">🌙</button>
-            </div>
-        </div>
-    </nav>
+  <div class="container d-flex justify-content-between align-items-center">
+    <!-- Logo -->
+    <div class="logo-nav">
+      <img src="images/logos/LogoPri.png" alt="Logo Dragon Ball">
+    </div>
+
+    <!-- Frase dinámica -->
+    <div class="frase-dinamica-pro" id="frase-dinamica-pro"></div>
+
+    <!-- Botón hamburguesa para móviles -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+    <!-- Menú colapsable -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle active" href="#" id="historiaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Historia
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="historiaDropdown">
+    <li class="dropdown-header">Dragon Ball</li>
+    <li><a class="dropdown-item" href="#saga-emperador-pilaf">Emperador Pilaf</a></li>
+    <li><a class="dropdown-item" href="#saga-torneo-21">Torneo 21</a></li>
+    <li><a class="dropdown-item" href="#saga-red-ribbon">Red Ribbon</a></li>
+    <li class="dropdown-divider"></li>
+    <li class="dropdown-header">Dragon Ball Z</li>
+    <li><a class="dropdown-item" href="#saga-saiyajin">Saiyajin</a></li>
+    <li><a class="dropdown-item" href="#saga-freezer">Freezer</a></li>
+    <li><a class="dropdown-item" href="#saga-cell">Cell</a></li>
+    <li><a class="dropdown-item" href="#saga-majin-buu">Majin Buu</a></li>
+  </ul>
+</li>
+
+        <li class="nav-item"><a class="nav-link" href="personajes.html">Personajes</a></li>
+        <li class="nav-item"><a class="nav-link" href="galeria.html">Galería</a></li>
+        <li class="nav-item"><a class="nav-link" href="curiosidades.html">Curiosidades</a></li>
+      </ul>
+
+      <!-- Botón modo oscuro/claro -->
+      <button id="modo-toggle" class="btn btn-outline-warning ms-3" title="Cambiar modo">🌙</button>
+    </div>
+  </div>
+</nav>
+
 
     <!-- Sección Hero -->
     <header class="hero-section">
         <div class="overlay"></div>
         <div class="hero-content">
-            <h1>Historia Completa</h1>
-            <p>Descubre el origen, evolución y sagas de nuestro universo.</p>
-            <a href="#intro-saga" class="btn-explorar">Explorar Línea de Tiempo</a>
+           <div class="hero-content hero-text-estatico">
+              <h1>Historia Completa</h1>
+             <p>Descubre el origen, evolución y sagas de nuestro universo.</p>
+            </div>
+            <button class="btn-explorar">Explorar Línea de Tiempo</button>
         </div>
     </header>
 
     <!-- Sección de introducción a la saga de Dragon Ball -->
-    <section class="intro-saga" id="intro-saga">
-        <div class="container">
-            <img src="images/historia/DBPrimero.png" alt="Dragon Ball - Todas las sagas" class="img-fluid">
-        </div>
-    </section>
+   <section class="intro-saga intro-db" id="intro-saga-db">
+  <div class="container">
+    <img src="images/historia/DBPrimero.png" alt="Dragon Ball - Todas las sagas" class="img-fluid">
+  </div>
+</section>
 
     <!-- Timeline -->
     <section class="timeline" id="timeline">
-              <div class="timeline-item left">
+              <div class="timeline-item left" id="saga-emperador-pilaf">
             <div class="content">
                 <!-- Saga del emperador pilaf-->
                 <img src="images/historia/portada_saga/Saga_EmperadorPilaf.png" alt="Saga del Emperador Pilaf">
@@ -70,7 +101,7 @@
             </div>
         </div>
 
-        <div class="timeline-item right">
+        <div class="timeline-item right" id="saga-torneo-21">
              <!-- Logo Saga del Torneo 21 de las Artes Marciales-->
             <div class="logo-saga left-logo">
                 <img src="images/historia/Logo_saga/LogoSaga21TorneoArtemarciales.png" alt="Logo Saga Torneo 21">
@@ -85,7 +116,7 @@
         </div>
 
         <!-- Saga del Ejército Red Ribbon -->
-        <div class="timeline-item left">
+        <div class="timeline-item left" id="saga-red-ribbon">
             <div class="content">
                 <img src="/images/historia/portada_saga/Saga_del_Ejército_Red_Ribbon.png" alt="Saga del Ejército Red Ribbon">
                 <h3>Saga del Ejército Red Ribbon</h3>
@@ -99,7 +130,7 @@
             </div>
         </div>
 
-        <div class="timeline-item right">
+        <div class="timeline-item right" id="saga-uranai-baba">
             <!-- Logo de la Saga de Uranai Baba-->
             <div class="logo-saga left-logo">
                 <img src="images/historia/Logo_saga/LogoUranai_Baba.png" alt="Logo saga de Uranai Baba">
@@ -113,7 +144,7 @@
             </div>
         </div>
    
-        <div class="timeline-item left">
+        <div class="timeline-item left" id="saga-22-torneo">
             <!-- Saga del 22º Torneo de Artes Marciales-->
             <div class="content">
                 <img src="images/historia/portada_saga/Saga_del_22_Torneo_de_Artes_Marciales.png" alt="Saga del 22º Torneo de Artes Marciales">
@@ -127,7 +158,7 @@
             </div>
         </div>
 
-        <div class="timeline-item right">
+        <div class="timeline-item right" id="saga-piccolo-daimaku">
             <!-- Saga de Piccolo Daimaku-->
             <div class="logo-saga left-logo">
                 <img src="images/historia/Logo_saga/Logo_Picoro_Daimaku.png" alt="Logo saga de Piccolo Daimaku">
@@ -141,7 +172,7 @@
             </div>
         </div>
     <!-- Saga del 23º Torneo de Artes Marciales -->
-        <div class="timeline-item left">
+        <div class="timeline-item left" id="saga-23-torneo">
             <div class="content">
                 <img src="images/historia/portada_saga/Saga_23_TorneodeArtesMarciales.png" alt="Saga del 23º Torneo de Artes Marciales">
                 <h3>Saga del 23º Torneo de Artes Marciales</h3>
@@ -156,21 +187,22 @@
 
 
         <!-- Introduccion a dragon ball Z -->
-<br>
+         <br>
         <!-- Banner de introducción a Dragon Ball Z -->
-<section class="intro-saga" id="intro-saga">
-  <div class="container intro-z-logo">
-  <img src="images/historia/Dragon_Ball_Z_Logo_A.png" alt="Dragon Ball Z - Todas las sagas" class="img-fluid">
-</div>
-
+<section class="intro-saga intro-dbz" id="intro-saga-dbz">
+  <div class="intro-content">
+    <img src="images/historia/Dragon_Ball_Z_Logo_A.png" alt="Dragon Ball Z - Todas las sagas" class="img-fluid" data-aos="zoom-in">
+  </div>
 </section>
+
+
 
   <!-- Banner de introducción a Dragon Ball Z -->
 <!-- Línea de tiempo: Dragon Ball Z -->
 <section class="timeline" id="timeline">
 
   <!-- 1. Saga de los Saiyajin -->
-  <div class="timeline-item left">
+  <div class="timeline-item left" id="saga-saiyajin">
     <div class="content">
       <img src="images/historia/portada_saga/sagaSaiyan.png" alt="Saga de los Saiyajin">
       <h3>Saga de los Saiyajin</h3>
@@ -183,7 +215,7 @@
   </div>
 
   <!-- 2. Saga de Freezer -->
-  <div class="timeline-item right">
+  <div class="timeline-item right" id="saga-freezer">
     <div class="logo-saga left-logo">
       <img src="images/historia/Logo_saga/Logo_Frezer.png" alt="Logo Saga Freezer">
     </div>
@@ -196,7 +228,7 @@
   </div>
 
   <!-- 3. Saga de los Androides y Cell -->
-  <div class="timeline-item left">
+  <div class="timeline-item left" id="saga-cell">
     <div class="content">
       <img src="images/historia/portada_saga/Saga_de_los_androides_y_cell.jpg" alt="Saga de los Androides y Cell">
       <h3>Saga de los Androides y Cell</h3>
@@ -209,7 +241,7 @@
   </div>
 
   <!-- 4. Saga del Gran Saiyaman -->
-  <div class="timeline-item right">
+  <div class="timeline-item right" id="saga-gran-saiyaman">
     <div class="logo-saga left-logo">
       <img src="images/historia/Logo_saga/Logo_Saga_Gran_Saiyaman.png" alt="Logo Saga Gran Saiyaman">
     </div>
@@ -222,7 +254,7 @@
   </div>
 
   <!-- 5. Saga del 25º Torneo de Artes Marciales -->
-  <div class="timeline-item left">
+  <div class="timeline-item left" id="saga-torneo-25">
     <div class="content">
       <img src="images/historia/portada_saga/Saga_Torneo_25_ArtesMarciales.png" alt="Saga del 25º Torneo de Artes Marciales">
       <h3>Saga del 25º Torneo de Artes Marciales</h3>
@@ -235,7 +267,7 @@
   </div>
 
   <!-- 6. Saga de Majin Buu -->
-  <div class="timeline-item right">
+  <div class="timeline-item right" id="saga-majin-buu">
     <div class="logo-saga left-logo">
       <img src="images/historia/Logo_saga/Logo_Saga_Majin_Buu.png" alt="Logo Saga Majin Buu">
     </div>

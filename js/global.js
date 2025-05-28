@@ -31,4 +31,24 @@ btnExplorar?.addEventListener('click', (e) => {
   });
 
 
+const nav = document.querySelector('.custom-navbar');
+const toggleBtn = document.getElementById('modo-toggle');
+
+function actualizarEstiloNavbar() {
+  if (document.body.classList.contains('light-mode')) {
+    nav.classList.remove('navbar-dark');
+    nav.classList.add('navbar-light');
+  } else {
+    nav.classList.remove('navbar-light');
+    nav.classList.add('navbar-dark');
+  }
+}
+
+// Ejecutar al iniciar
+actualizarEstiloNavbar();
+
+// Cambiar cuando se haga clic en el botón de modo
+toggleBtn.addEventListener('click', () => {
+  setTimeout(actualizarEstiloNavbar, 100); // Pequeño retardo para esperar el cambio de clase
+});
 
