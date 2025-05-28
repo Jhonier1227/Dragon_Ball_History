@@ -500,7 +500,7 @@ font-family: 'Luckiest Guy', cursive;
     margin-bottom: 30px;
 }
 
-.btn-explorar {
+#btnExplorar {
     display: inline-block;
     padding: 14px 40px;
     background: #ffcc00;

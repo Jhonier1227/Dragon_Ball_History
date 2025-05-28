@@ -111,3 +111,54 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const tarjetasTimeline = document.querySelectorAll(".timeline-item .content");
+
+  tarjetasTimeline.forEach((tarjeta) => {
+    tarjeta.addEventListener("mouseenter", () => {
+      gsap.to(tarjeta, {
+        scale: 1.05,
+        boxShadow: "0 10px 30px rgba(255, 145, 0, 0.4)",
+        duration: 0.3,
+        ease: "power2.out"
+      });
+    });
+
+    tarjeta.addEventListener("mouseleave", () => {
+      gsap.to(tarjeta, {
+        scale: 1,
+        boxShadow: "0 5px 20px rgba(0, 0, 0, 0.4)",
+        duration: 0.3,
+        ease: "power2.in"
+      });
+    });
+  });
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const logos = document.querySelectorAll(".logo-saga");
+
+  logos.forEach((logo) => {
+    logo.addEventListener("mouseenter", () => {
+      gsap.to(logo, {
+        scale: 1.1,
+        boxShadow: "0 0 20px rgba(255, 145, 0, 0.5)",
+        duration: 0.3,
+        ease: "power2.out"
+      });
+    });
+
+    logo.addEventListener("mouseleave", () => {
+      gsap.to(logo, {
+        scale: 1,
+        boxShadow: "0 0 10px rgba(253, 158, 5, 0.3)",
+        duration: 0.3,
+        ease: "power2.in"
+      });
+    });
+  });
+});
