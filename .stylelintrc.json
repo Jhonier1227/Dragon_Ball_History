@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-prettier"
+  ],
+  "rules": {
+    "indentation": 2,
+    "number-leading-zero": "always",
+    "string-quotes": "double",
+    "color-hex-case": "lower",
+    "block-no-empty": true,
+    "selector-type-no-unknown": true
+  }
+}
