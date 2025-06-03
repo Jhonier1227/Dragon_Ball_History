@@ -126,4 +126,97 @@ body.light-mode .logo-saga {
 }
 
 
+/* ========== NAVBAR GENERAL ========== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000; /* Fondo oscuro tipo Dragon Ball */
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* ========== LOGO ========== */
+.logo img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ========== FRASE DINÁMICA ========== */
+.frase-dinamica-pro {
+  flex: 1;
+  text-align: center;
+}
+
+/* ========== MENÚ DE NAVEGACIÓN ========== */
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.menu li a {
+  color: #FFA500;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.menu li a:hover {
+  color: #fff;
+}
+
+/* ========== BOTÓN HAMBURGUESA (OCULTO EN ESCRITORIO) ========== */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: #FFA500;
+  cursor: pointer;
+}
+
+/* ========== RESPONSIVE (pantallas menores a 768px) ========== */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    margin-top: 10px;
+    background-color: #111;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .menu li {
+    margin-bottom: 10px;
+  }
+
+  .menu.show {
+    display: flex;
+  }
+
+  .frase-dinamica-pro {
+    order: 3;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .btn#modo-toggle {
+    margin-top: 10px;
+  }
+}
+
+
+
 

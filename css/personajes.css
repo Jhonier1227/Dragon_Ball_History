@@ -1,3 +1,5 @@
+/* === Sección de Personajes con carrusel dinámico === */
+
 #seccion-personajes {
   padding: 80px 20px;
 }
@@ -5,9 +7,11 @@
 .carta-personaje {
   position: relative;
   overflow: hidden;
+  width: 300px;
+  height: 500px;
   border-radius: 20px;
   margin-bottom: 60px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   transition: transform 0.4s ease;
 }
 
@@ -39,13 +43,22 @@
   padding: 40px;
 }
 
-.img-personaje {
+/* Imagen con carrusel */
+.carrusel-imagen {
   width: 220px;
-  max-height: 420px;
-  object-fit: contain;
-  filter: drop-shadow(0 0 10px #FFA500);
+  height: 420px;
+  position: relative;
 }
 
+.carrusel-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px #FFA500);
+  transition: opacity 0.5s ease;
+}
+
+/* Texto */
 .nombre-personaje {
   font-size: 2.5rem;
   color: #FFA500;
@@ -59,12 +72,101 @@
   line-height: 1.5;
 }
 
-/* Adaptación al modo claro */
+/* Modo claro */
 body.light-mode .descripcion-personaje {
   color: #111;
 }
 
 body.light-mode .carta-personaje {
   background-color: #fff;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+
+.grid-personajes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+/* Responsive: 2 columnas en tablets */
+@media screen and (max-width: 992px) {
+  .grid-personajes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsive: 1 columna en móviles */
+@media screen and (max-width: 600px) {
+  .grid-personajes {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+.nombre-personaje {
+  font-size: 2rem;
+  color: #FFA500;
+  margin-bottom: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.carta-personaje:hover .nombre-personaje {
+  opacity: 1;
+}
+
+@media screen and (max-width: 600px) {
+  .contenido-personaje {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.carrusel-imagen {
+  width: 100%;
+  height: 300px;
+  position: relative;
+}
+
+.carrusel-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.carrusel-imagen:hover img {
+  transform: scale(1.05);
+}
+
+.carta-personaje:hover .carrusel-imagen img {
+  filter: drop-shadow(0 0 15px #FFA500);
+}
+
+.carta-personaje:hover .descripcion-personaje {
+  opacity: 1;
+}
+
+.descripcion-personaje {
+  font-size: 1.2rem;
+  color: #fff;
+  max-width: 400px;
+  line-height: 1.6;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+body.light-mode .carta-personaje:hover .descripcion-personaje {
+  color: #333;
+}
+body.light-mode .carta-personaje:hover .fondo-personaje {
+  filter: brightness(0.8);
+}
+
+body.light-mode .carta-personaje {
+  background-color: #f9f9f9;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
