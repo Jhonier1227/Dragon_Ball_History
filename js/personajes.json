@@ -17,9 +17,9 @@
     "nombre": "Vegeta",
     "descripcion": "El príncipe de los Saiyajin, siempre buscando superar a Goku.",
     "imagenes": [
-      "vegeta_01.png",
-      "vegeta_02.png",
-      "vegeta_03.png"
+      "vegeta.png",
+      "vegeta_ssj.png",
+      "vegeta_ssj_magin.png"
     ],
     "saga": "Dragon Ball Z",
     "tipo": "Saiyajin"
@@ -29,8 +29,9 @@
     "nombre": "Gohan",
     "descripcion": "Hijo de Goku con gran poder oculto.",
     "imagenes": [
-      "gohan_01.png",
-      "gohan_02.png"
+      "Adult_gohan.png",
+      "Adult_gohan_ssj.png",
+      "Adult_gohan_ssj_2.png"
     ],
     "saga": "Dragon Ball Z",
     "tipo": "Híbrido"
@@ -41,8 +42,8 @@
     "nombre": "Piccolo",
     "descripcion": "Un guerrero Namekiano que se convierte en un gran aliado de Goku.",
     "imagenes": [
-      "piccolo_01.png",
-      "piccolo_02.png"
+      "piccolo.png",
+      "piccolo_2.png"
     ],
     "saga": "Dragon Ball Z",
     "tipo": "Namekiano"

@@ -73,31 +73,37 @@
   box-sizing: border-box;
 }
 
-/* --------------------- 6. Carrusel de imágenes (carrusel-imagen) --------------------- */
-/* Contenedor fijo para el carrusel: 100% ancho carta, 300px de alto */
+/* ------------------------------------------------------------------------
+   6. Carrusel de imágenes (carrusel-imagen) — Ajuste para mostrar la imagen completa
+   ------------------------------------------------------------------------ */
+
+/* Ajustamos el contenedor del carrusel a un alto fijo (por ejemplo, 300px),
+   y el ancho al 100% de la carta. Así nos aseguramos de que todas las imágenes
+   tengan el mismo “marco” y no varíen de tamaño. */
 .carrusel-imagen {
-  width: 200px;                /* Ocupa todo el ancho de la carta (300px) */
-  height: 800px;              /* Alto fijo para uniformidad */
+  width: 100%;            /* Ocupa todo el ancho de la carta */
+  height: 300px;          /* Alto fijo para que no cambie según el contenido */
   position: relative;
-  overflow: hidden;           /* Recorta cualquier desbordamiento */
-  border-radius: 10px;        /* Esquinas redondeadas internas */
-  margin-bottom: 20px;        /* Espacio debajo de la imagen */
+  overflow: hidden;       /* Recorta cualquier parte que sobresalga del marco */
+  border-radius: 10px;    /* Esquinas redondeadas internamente */
+  margin-bottom: 20px;    /* Espacio debajo del carrusel */
 }
 
-/* Imagen dentro del carrusel: ocupa todo el contenedor y se ajusta */
+/* Dentro del carrusel, la imagen ocupará hasta el 100% del contenedor,
+   pero mantendrá su proporción original (object-fit: contain). */
 .carrusel-imagen img {
   width: 100%;
   height: 100%;
-  object-fit: cover;           /* La imagen cubrirá el contenedor sin distorsión */
+  object-fit: contain;    /* “contain” asegura que se vea toda la imagen sin recortes */
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* Al pasar el cursor sobre la imagen, se amplía ligeramente */
+/* Cuando pases el cursor sobre la imagen, aún la ampliamos un poco. */
 .carrusel-imagen:hover img {
   transform: scale(1.05);
 }
 
-/* Al hacer hover en la carta, agrega shadow extra a la imagen */
+/* Al hacer hover en toda la carta, reforzamos el drop-shadow sobre la imagen. */
 .carta-personaje:hover .carrusel-imagen img {
   filter: drop-shadow(0 0 15px #FFA500);
 }
