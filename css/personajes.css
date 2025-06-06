@@ -1,172 +1,185 @@
-/* === Sección de Personajes con carrusel dinámico === */
+/* ========================================================================
+   === personajes.css - Sección de Personajes con Carrusel Dinámico ===
+   ======================================================================== */
 
+/* --------------------- 1. Espaciado general de la sección --------------------- */
 #seccion-personajes {
   padding: 80px 20px;
 }
 
+/* --------------------- 2. Grid de tarjetas (4 → 2 → 1 columnas) --------------------- */
+.grid-personajes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas en escritorio */
+  gap: 30px;                             /* Espacio entre cartas */
+}
+
+@media screen and (max-width: 992px) {
+  .grid-personajes {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .grid-personajes {
+    grid-template-columns: 1fr; /* 1 columna en móviles */
+  }
+}
+
+/* --------------------- 3. Tarjeta de personaje (carta-personaje) --------------------- */
 .carta-personaje {
   position: relative;
   overflow: hidden;
-  width: 300px;
-  height: 500px;
+  width: 300px;               /* Ancho fijo para todas las cartas */
+  height: 500px;              /* Alto fijo para todas las cartas */
   border-radius: 20px;
-  margin-bottom: 60px;
+  margin: 0 auto 60px;        /* Centrada horizontalmente y margen inferior */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  transition: transform 0.4s ease;
+  background-color: #000;     /* Fondo oscuro base (se ajustará en light-mode) */
+  transition: transform 0.4s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Efecto hover: escala ligeramente la carta */
 .carta-personaje:hover {
   transform: scale(1.02);
 }
 
+/* --------------------- 4. Fondo de la carta (fondo-personaje) --------------------- */
 .fondo-personaje {
   position: absolute;
-  inset: 0;
+  inset: 0;                   /* top:0; right:0; bottom:0; left:0 */
   background-size: cover;
   background-position: center;
-  filter: brightness(0.4);
-  z-index: 0;
+  filter: brightness(0.4);    /* Oscurece fondo para resaltar contenido */
+  z-index: 0;                 /* Debajo del contenido */
   transition: filter 0.3s ease;
 }
 
+/* Al hacer hover, aclara un poco el fondo */
 .carta-personaje:hover .fondo-personaje {
   filter: brightness(0.6);
 }
 
+/* --------------------- 5. Contenido interno de la carta --------------------- */
 .contenido-personaje {
   position: relative;
-  z-index: 2;
+  z-index: 2;                     /* Encima del fondo */
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;         /* Apila imagen y texto verticalmente */
   align-items: center;
-  gap: 40px;
-  padding: 40px;
+  justify-content: flex-start;    /* Texto bajo la imagen */
+  padding: 20px;                  /* Espacio interno */
+  height: 100%;                   /* Imperativo para centrar verticalmente si es necesario */
+  box-sizing: border-box;
 }
 
-/* Imagen con carrusel */
+/* --------------------- 6. Carrusel de imágenes (carrusel-imagen) --------------------- */
+/* Contenedor fijo para el carrusel: 100% ancho carta, 300px de alto */
 .carrusel-imagen {
-  width: 220px;
-  height: 420px;
+  width: 200px;                /* Ocupa todo el ancho de la carta (300px) */
+  height: 800px;              /* Alto fijo para uniformidad */
   position: relative;
+  overflow: hidden;           /* Recorta cualquier desbordamiento */
+  border-radius: 10px;        /* Esquinas redondeadas internas */
+  margin-bottom: 20px;        /* Espacio debajo de la imagen */
 }
 
+/* Imagen dentro del carrusel: ocupa todo el contenedor y se ajusta */
 .carrusel-imagen img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  filter: drop-shadow(0 0 10px #FFA500);
-  transition: opacity 0.5s ease;
+  object-fit: cover;           /* La imagen cubrirá el contenedor sin distorsión */
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* Texto */
-.nombre-personaje {
-  font-size: 2.5rem;
-  color: #FFA500;
-  margin-bottom: 15px;
-}
-
-.descripcion-personaje {
-  font-size: 1.1rem;
-  color: #fff;
-  max-width: 500px;
-  line-height: 1.5;
-}
-
-/* Modo claro */
-body.light-mode .descripcion-personaje {
-  color: #111;
-}
-
-body.light-mode .carta-personaje {
-  background-color: #fff;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-
-
-.grid-personajes {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-}
-
-/* Responsive: 2 columnas en tablets */
-@media screen and (max-width: 992px) {
-  .grid-personajes {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Responsive: 1 columna en móviles */
-@media screen and (max-width: 600px) {
-  .grid-personajes {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-
-.nombre-personaje {
-  font-size: 2rem;
-  color: #FFA500;
-  margin-bottom: 10px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.carta-personaje:hover .nombre-personaje {
-  opacity: 1;
-}
-
-@media screen and (max-width: 600px) {
-  .contenido-personaje {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-}
-
-.carrusel-imagen {
-  width: 100%;
-  height: 300px;
-  position: relative;
-}
-
-.carrusel-imagen img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-}
-
+/* Al pasar el cursor sobre la imagen, se amplía ligeramente */
 .carrusel-imagen:hover img {
   transform: scale(1.05);
 }
 
+/* Al hacer hover en la carta, agrega shadow extra a la imagen */
 .carta-personaje:hover .carrusel-imagen img {
   filter: drop-shadow(0 0 15px #FFA500);
 }
 
+/* --------------------- 7. Texto: nombre y descripción --------------------- */
+
+/* Nombre del personaje: oculto por defecto */
+.nombre-personaje {
+  font-size: 2rem;
+  color: #FFA500;
+  margin-bottom: 10px;
+  opacity: 0;                        /* Invisibilidad inicial */
+  transition: opacity 0.3s ease;
+}
+
+/* Aparece el nombre al hacer hover en la carta */
+.carta-personaje:hover .nombre-personaje {
+  opacity: 1;
+}
+
+/* Descripción: oculta por defecto */
+.descripcion-personaje {
+  font-size: 1.2rem;
+  color: #fff;
+  max-width: 260px;                 /* Alineado al ancho de la carta menos gap */
+  line-height: 1.6;
+  text-align: center;               /* Centrar texto */
+  opacity: 0;                       /* Invisibilidad inicial */
+  transition: opacity 0.3s ease;
+}
+
+/* Al hacer hover en la carta, aparece la descripción */
 .carta-personaje:hover .descripcion-personaje {
   opacity: 1;
 }
 
-.descripcion-personaje {
-  font-size: 1.2rem;
-  color: #fff;
-  max-width: 400px;
-  line-height: 1.6;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-body.light-mode .carta-personaje:hover .descripcion-personaje {
-  color: #333;
-}
-body.light-mode .carta-personaje:hover .fondo-personaje {
-  filter: brightness(0.8);
+/* --------------------- 8. Adaptación al modo claro (light-mode) --------------------- */
+body.light-mode .carta-personaje {
+  background-color: #f9f9f9;         /* Fondo claro en el modo claro */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-body.light-mode .carta-personaje {
-  background-color: #f9f9f9;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+body.light-mode .fondo-personaje {
+  filter: brightness(0.6);           /* Fondo menos oscuro en light-mode */
+}
+
+body.light-mode .carta-personaje:hover .fondo-personaje {
+  filter: brightness(0.8);           /* Aclara más al hacer hover */
+}
+
+body.light-mode .descripcion-personaje {
+  color: #333;                       /* Texto oscuro en modo claro */
+}
+
+/* --------------------- 9. Ajustes responsive adicionales --------------------- */
+@media screen and (max-width: 600px) {
+  /* Contenido en columna y centrado en móviles */
+  .contenido-personaje {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;                   /* Reduce padding en móviles */
+  }
+
+  /* Ajusta la altura total de la carta en móviles si es necesario */
+  .carta-personaje {
+    width: 100%;                     /* Ocupa todo el ancho disponible */
+    height: auto;                    /* Alto automático para ajustarse al contenido */
+  }
+
+  .carrusel-imagen {
+    height: 250px;                   /* Altura reducida en móviles */
+    margin-bottom: 15px;
+  }
+
+  .nombre-personaje {
+    font-size: 1.8rem;
+  }
+
+  .descripcion-personaje {
+    font-size: 1rem;
+    max-width: 240px;
+    margin-bottom: 10px;
+  }
 }

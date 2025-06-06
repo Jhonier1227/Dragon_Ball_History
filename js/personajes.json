@@ -1,0 +1,50 @@
+[
+  {
+    "id": "goku",
+    "nombre": "Goku",
+    "descripcion": "El Saiyajin criado en la Tierra que siempre lucha por proteger a los suyos.",
+    "imagenes": [
+      "goku_base.png",
+      "goku_ssj.png",
+      "goku_ssj_2.png",
+      "goku_ssj_3.png"
+    ],
+    "saga": "Dragon Ball Z",
+    "tipo": "Saiyajin"
+  },
+  {
+    "id": "vegeta",
+    "nombre": "Vegeta",
+    "descripcion": "El príncipe de los Saiyajin, siempre buscando superar a Goku.",
+    "imagenes": [
+      "vegeta_01.png",
+      "vegeta_02.png",
+      "vegeta_03.png"
+    ],
+    "saga": "Dragon Ball Z",
+    "tipo": "Saiyajin"
+  },
+  {
+    "id": "gohan",
+    "nombre": "Gohan",
+    "descripcion": "Hijo de Goku con gran poder oculto.",
+    "imagenes": [
+      "gohan_01.png",
+      "gohan_02.png"
+    ],
+    "saga": "Dragon Ball Z",
+    "tipo": "Híbrido"
+  },
+
+  {
+    "id": "piccolo",
+    "nombre": "Piccolo",
+    "descripcion": "Un guerrero Namekiano que se convierte en un gran aliado de Goku.",
+    "imagenes": [
+      "piccolo_01.png",
+      "piccolo_02.png"
+    ],
+    "saga": "Dragon Ball Z",
+    "tipo": "Namekiano"
+  }
+]
