@@ -1,7 +1,7 @@
 [
   {
     "id": "goku",
-    "nombre": "Goku",
+    "nombre": "Goku(Z)",
     "descripcion": "El Saiyajin criado en la Tierra que siempre lucha por proteger a los suyos.",
     "imagenes": [
       "goku_base.png",
@@ -14,7 +14,7 @@
   },
   {
     "id": "vegeta",
-    "nombre": "Vegeta",
+    "nombre": "Vegeta(Z)",
     "descripcion": "El príncipe de los Saiyajin, siempre buscando superar a Goku.",
     "imagenes": [
       "vegeta.png",
@@ -26,7 +26,7 @@
   },
   {
     "id": "gohan",
-    "nombre": "Gohan",
+    "nombre": "Gohan(Z)",
     "descripcion": "Hijo de Goku con gran poder oculto.",
     "imagenes": [
       "Adult_gohan.png",
@@ -39,7 +39,7 @@
 
   {
     "id": "piccolo",
-    "nombre": "Piccolo",
+    "nombre": "Piccolo(Z)",
     "descripcion": "Un guerrero Namekiano que se convierte en un gran aliado de Goku.",
     "imagenes": [
       "piccolo.png",
@@ -51,11 +51,12 @@
 
   {
     "id": "krillin",
-    "nombre": "Krillin",
+    "nombre": "Krillin(Z)",
     "descripcion": "El mejor amigo de Goku y un valiente luchador.",
     "imagenes": [
-      "krillin.png",
-      "krillin_ssj.png"
+      "krillin_01.png",
+      "krillin_02.png",
+      "krillin_03.png"
     ],
     "saga": "Dragon Ball Z",
     "tipo": "Humano"
