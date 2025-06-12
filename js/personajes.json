@@ -68,7 +68,7 @@
     "descripcion": "Una genio inventora y la esposa de Vegeta.",
     "imagenes": [
       "bulma.png",
-      "bulma_2.png"
+      "bulma_01.png"
     ],
     "saga": "Dragon Ball Z",
     "tipo": "Humano"
@@ -79,7 +79,7 @@
     "descripcion": "El sabio maestro de artes marciales y mentor de Goku.",
     "imagenes": [
       "maestro_roshi.png",
-      "maestro_roshi_2.png"
+      "maestro_roshi_01.png"
     ],
     "saga": "Dragon Ball Z",
     "tipo": "Humano"
@@ -90,11 +90,33 @@
     "nombre": "Trunks",
     "descripcion": "Hijo de Vegeta y Bulma, un guerrero valiente del futuro.",
     "imagenes": [
-      "trunks.png",
-      "trunks_ssj.png"
+      "trunks_base.png",
+      "trunks_ssj.png",
+      "trunks_ssj_2.png"
     ],
     "saga": "Dragon Ball Z",
     "tipo": "Híbrido"
+  },
+
+  {
+    "id":"yamcha",
+    "nombre": "Yamcha",
+    "descripcion": "Un exluchador y amigo de Goku, conocido por su espíritu valiente.",
+    "imagenes": [
+      "yamcha.png",
+      "yamcha_01.png"
+    ]
+  },
+  {
+    "id": "tien",
+    "nombre": "Tien",
+    "descripcion": "Un guerrero con habilidades únicas y un fuerte sentido del deber.",
+    "imagenes": [
+      "tien.png",
+      "tien_01.png"
+    ],
+    "saga": "Dragon Ball Z",
+    "tipo": "Humano"
   },
 
   {

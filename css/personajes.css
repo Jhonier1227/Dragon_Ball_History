@@ -3,6 +3,38 @@
    ======================================================================== */
 
 /* --------------------- 1. Espaciado general de la sección --------------------- */
+
+/* ========================================================================
+   TARJETAS SIEMPRE NEGRAS (solo cambia el fondo general de la página)
+   ======================================================================== */
+
+/* Evitamos que el modo claro cambie el fondo de las cartas */
+body.light-mode .carta-personaje {
+  background-color: #000 !important;          /* Fondo negro fijo */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Mantenemos el filtro de brillo para el fondo de personaje */
+body.light-mode .fondo-personaje {
+  filter: brightness(0.4) !important;
+}
+
+/* Cuando pasas el cursor, aclaramos un poco el fondo, igual que en modo oscuro */
+body.light-mode .carta-personaje:hover .fondo-personaje {
+  filter: brightness(0.6) !important;
+}
+
+/* Texto de descripción en modo claro: siempre blanco para buen contraste */
+body.light-mode .descripcion-personaje {
+  color: #fff !important;
+}
+
+/* Nombre y descripción aparecen en hover tal como antes */
+
+
+
+
+
 #seccion-personajes {
   padding: 80px 20px;
 }
