@@ -5,5 +5,13 @@
   "stylelint.validate": ["css", "scss"],
   "liveServer.settings.port": 5500,
   "liveServer.settings.browser": "chrome",
-  "liveServer.settings.wait": 500
+  "liveServer.settings.wait": 500,
+  "eslint.rules.customizations": [
+    { "rule": "spaced-comment", "severity": "off" }
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "true"
+  },
+  "livePreview.defaultPreviewPath": "/personajes.html",
+  "cSpell.words": ["Namekiano", "vegeta"]
 }

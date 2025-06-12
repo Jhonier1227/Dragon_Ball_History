@@ -47,5 +47,91 @@
     ],
     "saga": "Dragon Ball Z",
     "tipo": "Namekiano"
+  },
+
+  {
+    "id": "krillin",
+    "nombre": "Krillin",
+    "descripcion": "El mejor amigo de Goku y un valiente luchador.",
+    "imagenes": [
+      "krillin.png",
+      "krillin_ssj.png"
+    ],
+    "saga": "Dragon Ball Z",
+    "tipo": "Humano"
+  },
+
+  {
+    "id": "bulma",
+    "nombre": "Bulma",
+    "descripcion": "Una genio inventora y la esposa de Vegeta.",
+    "imagenes": [
+      "bulma.png",
+      "bulma_2.png"
+    ],
+    "saga": "Dragon Ball Z",
+    "tipo": "Humano"
+  },
+  {
+    "id": "maestro_roshi",
+    "nombre": "Maestro Roshi",
+    "descripcion": "El sabio maestro de artes marciales y mentor de Goku.",
+    "imagenes": [
+      "maestro_roshi.png",
+      "maestro_roshi_2.png"
+    ],
+    "saga": "Dragon Ball Z",
+    "tipo": "Humano"
+  },
+
+  {
+    "id": "trunks",
+    "nombre": "Trunks",
+    "descripcion": "Hijo de Vegeta y Bulma, un guerrero valiente del futuro.",
+    "imagenes": [
+      "trunks.png",
+      "trunks_ssj.png"
+    ],
+    "saga": "Dragon Ball Z",
+    "tipo": "Híbrido"
+  },
+
+  {
+    "id": "frieza",
+    "nombre": "Freezer",
+    "descripcion": "El tirano galáctico que busca la inmortalidad y destruir a los Saiyajin.",
+    "imagenes": [
+      "freezer.png",
+      "freezer_final.png"
+    ],
+    "saga": "Dragon Ball Z",
+    "tipo": "Furioso"
+  },
+
+  {
+    "id": "cell",
+    "nombre": "Cell",
+    "descripcion": "Un bioandroide que busca alcanzar la perfección.",
+    "imagenes": [
+      "cell.png",
+      "cell_2.png"
+    ],
+    "saga": "Dragon Ball Z",
+    "tipo": "Bioandroide"
+  },
+
+  {
+    "id": "majin_buu",
+    "nombre": "Majin Buu",
+    "descripcion": "Un antiguo ser mágico con múltiples formas y personalidades.",
+    "imagenes": [
+      "majin_buu.png",
+      "majin_buu_fat.png"
+    ],
+    "saga": "Dragon Ball Z",
+    "tipo": "Mágico"
   }
+
+
+ 
 ]
