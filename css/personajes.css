@@ -29,6 +29,159 @@ body.light-mode .descripcion-personaje {
   color: #fff !important;
 }
 
+/* ================================================
+   AJUSTADO: NAVBAR PERSONAJES + BODY + TARJETAS
+   ================================================ */
+
+/* === FONDO DEL BODY === */
+body {
+  background-color: #000;
+  transition: background-color 0.3s ease;
+}
+
+body.light-mode {
+  background-color: #f4f4f4;
+}
+
+/* === NAVBAR PERSONAJES === */
+.navbar-personajes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 0 15px rgba(255, 165, 0, 0.3);
+  padding: 20px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+body.light-mode .navbar-personajes {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* Logo */
+.navbar-personajes .logo img {
+  height: 70px;
+  filter: drop-shadow(0 0 5px #FFA500);
+}
+
+/* Frase dinámica */
+.navbar-personajes .frase-dinamica-pro {
+  flex: 1;
+  text-align: center;
+  color: #FFA500;
+  font-weight: 700;
+  font-size: 1.2rem;
+  animation: fadeIn 1s ease;
+  margin: 0 25px;
+}
+
+/* Botón modo claro/oscuro */
+.navbar-personajes #modo-toggle {
+  margin-left: auto;
+  padding: 8px 16px;
+  font-size: 1.3rem;
+  border: 2px solid #FFA500;
+  background-color: transparent;
+  color: #FFA500;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(255, 165, 0, 0.4);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar-personajes #modo-toggle:hover {
+  background-color: #FFA500;
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* Menú */
+.navbar-personajes .menu {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.navbar-personajes .menu li a {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+body.light-mode .navbar-personajes .menu li a {
+  color: #111;
+}
+
+.navbar-personajes .menu li a:hover,
+.navbar-personajes .menu li a.active {
+  color: #FFA500;
+  transform: scale(1.1);
+}
+
+/* Hamburguesa */
+.navbar-personajes .menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: #FFA500;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .navbar-personajes {
+    flex-wrap: wrap;
+    padding: 15px 20px;
+  }
+  .navbar-personajes .menu-toggle {
+    display: block;
+  }
+  .navbar-personajes .menu {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    margin-top: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    padding: 10px;
+  }
+  .navbar-personajes .menu.show {
+    display: flex;
+  }
+  .navbar-personajes .frase-dinamica-pro {
+    width: 100%;
+    margin: 10px 0;
+    font-size: 1rem;
+  }
+  .navbar-personajes #modo-toggle {
+    margin: 10px 0 0 0;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* === TARJETAS PERSONAJES === */
+.carta-personaje {
+  background-color: #000;
+  transition: background-color 0.3s ease;
+}
+
+body.light-mode .carta-personaje {
+  background-color: #111;
+}
+
+
+
+
+
 /* Nombre y descripción aparecen en hover tal como antes */
 
 

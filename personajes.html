@@ -21,21 +21,34 @@
 <body>
 
   <!-- ================== NAVBAR ================== -->
-  <nav class="navbar">
-    <div class="logo">
-      <img src="images/logos/LogoPri.png" alt="Logo Dragon Ball" />
-    </div>
-    <div class="frase-dinamica-pro" id="frase-dinamica-pro"></div>
-    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-    <ul class="menu" id="menu">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="historia.html">Historia</a></li>
-      <li><a href="personajes.html">Personajes</a></li>
-      <li><a href="galeria.html">Galería</a></li>
-      <li><a href="curiosidades.html">Curiosidades</a></li>
-    </ul>
-    <button id="modo-toggle" class="btn btn-outline-warning" title="Cambiar modo">🌙</button>
-  </nav>
+  <!-- =================== NAVBAR - PERSONAJES =================== -->
+<nav class="navbar navbar-personajes navbar-dark">
+  <!-- Logo -->
+  <div class="logo">
+    <img src="images/logos/LogoPri.png" alt="Logo Dragon Ball" />
+  </div>
+
+  <!-- Frase dinámica especial para Personajes -->
+  <div class="frase-dinamica-pro" id="frase-dinamica-pro">
+    ¡Descubre a todos los guerreros!
+  </div>
+
+  <!-- Botón Hamburguesa (menú móvil) -->
+  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+  <!-- Menú principal -->
+  <ul class="menu" id="menu">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="historia.html">Historia</a></li>
+    <li><a href="personajes.html" class="active">Personajes</a></li>
+    <li><a href="galeria.html">Galería</a></li>
+    <li><a href="curiosidades.html">Curiosidades</a></li>
+  </ul>
+
+  <!-- Botón modo claro/oscuro -->
+       <button id="modo-toggle" class="btn btn-outline-warning ms-3" title="Cambiar modo">☀️</button>
+</nav>
+
 
   <!-- ================== SECTION DE PERSONAS ================== -->
   <section id="seccion-personajes">

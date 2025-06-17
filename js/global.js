@@ -11,38 +11,43 @@ btnExplorar?.addEventListener('click', (e) => {
 
 
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const toggleBtn = document.getElementById("modo-toggle");
-    const body = document.body;
+ // Espera a que el DOM esté listo
+window.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.getElementById("modo-toggle");
+  const body = document.body;
+  const nav = document.querySelector(".navbar"); // Aplica a cualquier navbar
 
-    // Cargar preferencia guardada
-    const modoGuardado = localStorage.getItem("modo");
-    if (modoGuardado === "claro") {
-      body.classList.add("light-mode");
-      toggleBtn.textContent = "🌙";
-    }
+  // 1️⃣ Carga la preferencia guardada
+  const modoGuardado = localStorage.getItem("modo");
+  if (modoGuardado === "claro") {
+    body.classList.add("light-mode");
+    toggleBtn.textContent = "🌙";
+  } else {
+    toggleBtn.textContent = "☀️";
+  }
+  actualizarEstiloNavbar();
 
-    toggleBtn.addEventListener("click", () => {
-      body.classList.toggle("light-mode");
-      const esClaro = body.classList.contains("light-mode");
-      toggleBtn.textContent = esClaro ? "🌙" : "☀️";
-      localStorage.setItem("modo", esClaro ? "claro" : "oscuro");
-    });
+  // 2️⃣ Al hacer clic, alterna el modo y lo guarda
+  toggleBtn.addEventListener("click", () => {
+    const esClaro = body.classList.toggle("light-mode");
+    toggleBtn.textContent = esClaro ? "🌙" : "☀️";
+    localStorage.setItem("modo", esClaro ? "claro" : "oscuro");
+    actualizarEstiloNavbar();
   });
 
-
-const nav = document.querySelector('.custom-navbar');
-const toggleBtn = document.getElementById('modo-toggle');
-
-function actualizarEstiloNavbar() {
-  if (document.body.classList.contains('light-mode')) {
-    nav.classList.remove('navbar-dark');
-    nav.classList.add('navbar-light');
-  } else {
-    nav.classList.remove('navbar-light');
-    nav.classList.add('navbar-dark');
+  // 3️⃣ Función para actualizar la clase del navbar
+  function actualizarEstiloNavbar() {
+    if (!nav) return;
+    if (body.classList.contains("light-mode")) {
+      nav.classList.add("navbar-light");
+      nav.classList.remove("navbar-dark");
+    } else {
+      nav.classList.add("navbar-dark");
+      nav.classList.remove("navbar-light");
+    }
   }
-}
+});
+// Botón de modo claro/oscuro
 
 // Ejecutar al iniciar
 actualizarEstiloNavbar();
