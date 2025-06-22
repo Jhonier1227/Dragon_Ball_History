@@ -9,7 +9,7 @@
       "goku_ssj_2.png",
       "goku_ssj_3.png"
     ],
-    "saga": "Dragon Ball Z",
+    "saga": "dragon-ball-z",
     "tipo": "Saiyajin"
   },
   {
@@ -21,7 +21,7 @@
       "vegeta_ssj.png",
       "vegeta_ssj_magin.png"
     ],
-    "saga": "Dragon Ball Z",
+    "saga": "dragon-ball-z",
     "tipo": "Saiyajin"
   },
   {
@@ -33,7 +33,7 @@
       "Adult_gohan_ssj.png",
       "Adult_gohan_ssj_2.png"
     ],
-    "saga": "Dragon Ball Z",
+    "saga": "dragon-ball-z",
     "tipo": "Híbrido"
   },
 
@@ -45,7 +45,7 @@
       "piccolo.png",
       "piccolo_2.png"
     ],
-    "saga": "Dragon Ball Z",
+    "saga": "dragon-ball-z",
     "tipo": "Namekiano"
   },
 
@@ -58,49 +58,49 @@
       "krillin_02.png",
       "krillin_03.png"
     ],
-    "saga": "Dragon Ball Z",
+    "saga": "dragon-ball-z",
     "tipo": "Humano"
   },
 
   {
     "id": "bulma",
-    "nombre": "Bulma",
+    "nombre": "Bulma(Z)",
     "descripcion": "Una genio inventora y la esposa de Vegeta.",
     "imagenes": [
       "bulma.png",
       "bulma_01.png"
     ],
-    "saga": "Dragon Ball Z",
+    "saga": "dragon-ball-z",
     "tipo": "Humano"
   },
   {
     "id": "maestro_roshi",
-    "nombre": "Maestro Roshi",
+    "nombre": "Maestro Roshi(Z)",
     "descripcion": "El sabio maestro de artes marciales y mentor de Goku.",
     "imagenes": [
       "maestro_roshi.png",
       "maestro_roshi_01.png"
     ],
-    "saga": "Dragon Ball Z",
+    "saga": "dragon-ball-z",
     "tipo": "Humano"
   },
 
   {
     "id": "trunks",
-    "nombre": "Trunks",
+    "nombre": "Trunks(Z)",
     "descripcion": "Hijo de Vegeta y Bulma, un guerrero valiente del futuro.",
     "imagenes": [
       "trunks_base.png",
       "trunks_ssj.png",
       "trunks_ssj_2.png"
     ],
-    "saga": "Dragon Ball Z",
+    "saga": "dragon-ball-z",
     "tipo": "Híbrido"
   },
 
   {
     "id":"yamcha",
-    "nombre": "Yamcha",
+    "nombre": "Yamcha(Z)",
     "descripcion": "Un exluchador y amigo de Goku, conocido por su espíritu valiente.",
     "imagenes": [
       "yamcha.png",
@@ -109,47 +109,55 @@
   },
   {
     "id": "tien",
-    "nombre": "Tien",
+    "nombre": "Tien(Z)",
     "descripcion": "Un guerrero con habilidades únicas y un fuerte sentido del deber.",
     "imagenes": [
       "tien.png",
-      "tien_01.png"
+      "tien_01.png",
+      "tien_02.png"
     ],
-    "saga": "Dragon Ball Z",
+    "saga": "dragon-ball-z",
     "tipo": "Humano"
   },
 
   {
     "id": "frieza",
-    "nombre": "Freezer",
+    "nombre": "Freezer(Z)",
     "descripcion": "El tirano galáctico que busca la inmortalidad y destruir a los Saiyajin.",
     "imagenes": [
-      "freezer.png",
-      "freezer_final.png"
+      "frieza.png",
+      "frieza_01.png",
+      "frieza_02.png",
+      "frieza_03.png",
+      "frieza_04.png"
     ],
-    "saga": "Dragon Ball Z",
+    "saga": "dragon-ball-z",
     "tipo": "Furioso"
   },
 
   {
     "id": "cell",
-    "nombre": "Cell",
+    "nombre": "Cell(Z)",
     "descripcion": "Un bioandroide que busca alcanzar la perfección.",
     "imagenes": [
       "cell.png",
-      "cell_2.png"
+      "cell_01.png",
+      "cell_02.png"
     ],
-    "saga": "Dragon Ball Z",
+    "saga": "dragon-ball-z",
     "tipo": "Bioandroide"
   },
 
   {
     "id": "majin_buu",
-    "nombre": "Majin Buu",
+    "nombre": "Majin Buu(Z)",
     "descripcion": "Un antiguo ser mágico con múltiples formas y personalidades.",
     "imagenes": [
       "majin_buu.png",
-      "majin_buu_fat.png"
+      "majin_buu_01.png",
+      "majin_buu_02.png",
+      "majin_buu_03.png",
+      "majin_buu_04.png"
     ],
     "saga": "Dragon Ball Z",
     "tipo": "Mágico"

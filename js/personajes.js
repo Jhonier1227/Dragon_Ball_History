@@ -10,6 +10,46 @@ carrusel de imágenes, nombre y descripción, y finalmente añade interacción �
 También incluye manejo de errores de red.
 
 */
+// =============================
+// JS: Búsqueda y Filtro de Personajes
+// Dragon Ball History - Personajes
+// =============================
+
+document.addEventListener("DOMContentLoaded", () => {
+  const buscador = document.getElementById("buscador-personajes");
+  const filtro = document.getElementById("filtro-saga");
+  const grid = document.querySelector(".grid-personajes");
+
+  // Función para filtrar cartas
+  function filtrarPersonajes() {
+    const texto = buscador.value.toLowerCase();
+    const saga = filtro.value;
+
+    // Recorre cada carta
+    grid.querySelectorAll(".carta-personaje").forEach((carta) => {
+      const nombre = carta.querySelector(".nombre-personaje").textContent.toLowerCase();
+      const sagaCarta = carta.dataset.saga || "todos";
+
+      // Condición: coincide con texto Y saga
+      const coincideTexto = nombre.includes(texto);
+      const coincideSaga = saga === "todos" || saga === sagaCarta;
+
+      // Mostrar u ocultar
+      carta.style.display = coincideTexto && coincideSaga ? "block" : "none";
+    });
+  }
+
+  // Eventos en tiempo real
+  buscador.addEventListener("input", filtrarPersonajes);
+  filtro.addEventListener("change", filtrarPersonajes);
+});
+// =============================
+// JS: Carga Dinámica de Personajes
+// Dragon Ball History - Personajes
+// =============================
+
+
+
 
 // 1. Cargar el archivo JSON con los datos de los personajes
 fetch("js/personajes.json")
@@ -36,6 +76,7 @@ fetch("js/personajes.json")
       carta.classList.add("carta-personaje");
       // 3.2.2 Guardar el ID del personaje como atributo data-personaje
       carta.dataset.personaje = p.id;
+      carta.dataset.saga = p.saga || "todos"; // Guardar saga si existe, o "todos"
 
       // 3.2.3 Construir el HTML interno de la carta con backticks
       carta.innerHTML = `
