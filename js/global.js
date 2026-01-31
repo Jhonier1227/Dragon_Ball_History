@@ -49,8 +49,6 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 // Botón de modo claro/oscuro
 
-// Ejecutar al iniciar
-actualizarEstiloNavbar();
 
 // Cambiar cuando se haga clic en el botón de modo
 toggleBtn.addEventListener('click', () => {

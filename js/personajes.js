@@ -6,7 +6,7 @@ Este script se encarga de cargar dinámicamente las tarjetas de personajes en la
 de un archivo JSON (personajes.json). 
 Primero hace una petición para obtener los datos, luego crea por cada personaje una tarjeta HTML con su fondo,
 carrusel de imágenes, nombre y descripción, y finalmente añade interacción “hover” para que las
- imágenes roten automáticamente cada 2 segundos mientras el cursor esté sobre la carta.
+imágenes roten automáticamente cada 2 segundos mientras el cursor esté sobre la carta.
 También incluye manejo de errores de red.
 
 */
@@ -43,14 +43,13 @@ document.addEventListener("DOMContentLoaded", () => {
   buscador.addEventListener("input", filtrarPersonajes);
   filtro.addEventListener("change", filtrarPersonajes);
 });
+
+
+
 // =============================
 // JS: Carga Dinámica de Personajes
 // Dragon Ball History - Personajes
 // =============================
-
-
-
-
 // 1. Cargar el archivo JSON con los datos de los personajes
 fetch("js/personajes.json")
   .then((response) => {
