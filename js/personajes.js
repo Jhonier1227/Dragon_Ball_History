@@ -1,133 +1,166 @@
-/*
-=====================personajes.js=====================
-Este script es parte de un proyecto web que muestra tarjetas de personajes con imágenes y descripciones.
-
-Este script se encarga de cargar dinámicamente las tarjetas de personajes en la página a partir 
-de un archivo JSON (personajes.json). 
-Primero hace una petición para obtener los datos, luego crea por cada personaje una tarjeta HTML con su fondo,
-carrusel de imágenes, nombre y descripción, y finalmente añade interacción “hover” para que las
-imágenes roten automáticamente cada 2 segundos mientras el cursor esté sobre la carta.
-También incluye manejo de errores de red.
-
+﻿/* RESUMEN ARCHIVO: Logica de personajes (carga JSON, render dinamico, filtro y carrusel por tarjeta). */
+/* FUNCIONES CLAVE:
+ - inicializarNavbar(): menu movil accesible (click, teclado, resize).
+ - filtrarPersonajes(): filtra cartas por texto y saga, y muestra estado vacio.
+ - crearCarta(personaje): construye estructura HTML de cada personaje desde JSON.
+ - iniciarCarrusel(carta, personaje): rota imagenes en hover/touch.
+ - cargarPersonajes(): trae personajes.json, renderiza y activa filtros.
 */
-// =============================
-// JS: Búsqueda y Filtro de Personajes
-// Dragon Ball History - Personajes
-// =============================
-
 document.addEventListener("DOMContentLoaded", () => {
   const buscador = document.getElementById("buscador-personajes");
   const filtro = document.getElementById("filtro-saga");
   const grid = document.querySelector(".grid-personajes");
+  const sinResultados = document.getElementById("sin-resultados");
+  const menuToggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("menu");
 
-  // Función para filtrar cartas
-  function filtrarPersonajes() {
-    const texto = buscador.value.toLowerCase();
+  let cartas = [];
+
+  // Inicializa comportamiento del navbar en mobile:
+  // abrir/cerrar menu, accesibilidad por teclado y cierre en resize/enlaces.
+  const inicializarNavbar = () => {
+    if (!menuToggle || !menu) return;
+
+    // Alterna el estado visual del menu y actualiza aria-expanded.
+    const alternarMenu = () => {
+      menu.classList.toggle("show");
+      const abierto = menu.classList.contains("show");
+      menuToggle.setAttribute("aria-expanded", abierto ? "true" : "false");
+    };
+
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.addEventListener("click", alternarMenu);
+    menuToggle.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        alternarMenu();
+      }
+    });
+
+    menu.querySelectorAll("a").forEach((enlace) => {
+      enlace.addEventListener("click", () => menu.classList.remove("show"));
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 991) {
+        menu.classList.remove("show");
+        menuToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  };
+
+  // Filtra las cartas renderizadas por texto (nombre) y por saga seleccionada.
+  // Tambien controla el estado de "sin resultados".
+  const filtrarPersonajes = () => {
+    const texto = buscador.value.trim().toLowerCase();
     const saga = filtro.value;
+    let visibles = 0;
 
-    // Recorre cada carta
-    grid.querySelectorAll(".carta-personaje").forEach((carta) => {
-      const nombre = carta.querySelector(".nombre-personaje").textContent.toLowerCase();
+    cartas.forEach((carta) => {
+      const nombre = carta.dataset.nombre || "";
       const sagaCarta = carta.dataset.saga || "todos";
 
-      // Condición: coincide con texto Y saga
       const coincideTexto = nombre.includes(texto);
       const coincideSaga = saga === "todos" || saga === sagaCarta;
+      const mostrar = coincideTexto && coincideSaga;
 
-      // Mostrar u ocultar
-      carta.style.display = coincideTexto && coincideSaga ? "block" : "none";
+      carta.classList.toggle("is-hidden", !mostrar);
+      if (mostrar) visibles += 1;
     });
-  }
 
-  // Eventos en tiempo real
+    sinResultados.hidden = visibles > 0;
+  };
+
+  // Construye una tarjeta de personaje a partir del objeto recibido desde JSON.
+  // Devuelve el elemento <article> listo para insertarse en el grid.
+  const crearCarta = (personaje) => {
+    const carta = document.createElement("article");
+    carta.className = "carta-personaje";
+    carta.dataset.personaje = personaje.id;
+    carta.dataset.saga = personaje.saga || "todos";
+    carta.dataset.nombre = (personaje.nombre || "").toLowerCase();
+
+    const primeraImagen = personaje.imagenes?.[0] || "";
+    const fondo = `images/personajes/${personaje.id}/background.jpg`;
+
+    carta.innerHTML = `
+      <div class="fondo-personaje" style="background-image: url('${fondo}');"></div>
+      <div class="contenido-personaje">
+        <div class="carrusel-imagen">
+          <img src="images/personajes/${personaje.id}/${primeraImagen}" alt="${personaje.nombre}" class="img-personaje" loading="lazy">
+        </div>
+        <div class="texto-personaje">
+          <h3 class="nombre-personaje">${personaje.nombre}</h3>
+          <p class="descripcion-personaje">${personaje.descripcion}</p>
+        </div>
+      </div>
+    `;
+
+    iniciarCarrusel(carta, personaje);
+    return carta;
+  };
+
+  // Activa el carrusel de imagenes por tarjeta al hacer hover/touch.
+  const iniciarCarrusel = (carta, personaje) => {
+    const imagenes = personaje.imagenes || [];
+    if (imagenes.length <= 1) return;
+
+    const img = carta.querySelector(".img-personaje");
+    let index = 0;
+    let interval = null;
+
+    // Inicia rotacion automatica de imagenes.
+    const iniciar = () => {
+      if (interval) return;
+      interval = setInterval(() => {
+        index = (index + 1) % imagenes.length;
+        img.src = `images/personajes/${personaje.id}/${imagenes[index]}`;
+      }, 1800);
+    };
+
+    // Detiene rotacion y restablece la imagen inicial del personaje.
+    const detener = () => {
+      clearInterval(interval);
+      interval = null;
+      index = 0;
+      img.src = `images/personajes/${personaje.id}/${imagenes[0]}`;
+    };
+
+    carta.addEventListener("mouseenter", iniciar);
+    carta.addEventListener("mouseleave", detener);
+    carta.addEventListener("touchstart", iniciar, { passive: true });
+    carta.addEventListener("touchend", detener);
+  };
+
+  // Carga personajes.json, renderiza todas las tarjetas y aplica filtro inicial.
+  const cargarPersonajes = async () => {
+    try {
+      const response = await fetch("js/personajes.json");
+      if (!response.ok) throw new Error("No se pudo cargar personajes.json");
+
+      const personajes = await response.json();
+      const fragmento = document.createDocumentFragment();
+
+      personajes.forEach((personaje) => {
+        const carta = crearCarta(personaje);
+        cartas.push(carta);
+        fragmento.appendChild(carta);
+      });
+
+      grid.innerHTML = "";
+      grid.appendChild(fragmento);
+      filtrarPersonajes();
+    } catch (error) {
+      console.error("Error cargando personajes:", error);
+      sinResultados.textContent = "No se pudieron cargar los personajes.";
+      sinResultados.hidden = false;
+    }
+  };
+
   buscador.addEventListener("input", filtrarPersonajes);
   filtro.addEventListener("change", filtrarPersonajes);
+
+  inicializarNavbar();
+  cargarPersonajes();
 });
 
-
-
-// =============================
-// JS: Carga Dinámica de Personajes
-// Dragon Ball History - Personajes
-// =============================
-// 1. Cargar el archivo JSON con los datos de los personajes
-fetch("js/personajes.json")
-  .then((response) => {
-    // 1.1 Verificar que la respuesta HTTP sea exitosa (status 200–299)
-    if (!response.ok) {
-      // Si no es exitosa, lanzar un error para que pase al .catch
-      throw new Error("Network response was not ok");
-    }
-    // 1.2 Devolver la respuesta para procesarla en el siguiente .then
-    return response;
-  })
-  // 2. Convertir la respuesta en formato JSON (un array de objetos)
-  .then((res) => res.json())
-  // 3. Usar los datos JSON para generar las tarjetas de personajes
-  .then((personajes) => {
-    // 3.1 Seleccionar el contenedor donde se insertarán las cartas
-    const contenedor = document.querySelector(".grid-personajes");
-
-    // 3.2 Recorrer cada objeto de personaje en el array
-    personajes.forEach((p) => {
-      // 3.2.1 Crear el div principal de la carta
-      const carta = document.createElement("div");
-      carta.classList.add("carta-personaje");
-      // 3.2.2 Guardar el ID del personaje como atributo data-personaje
-      carta.dataset.personaje = p.id;
-      carta.dataset.saga = p.saga || "todos"; // Guardar saga si existe, o "todos"
-
-      // 3.2.3 Construir el HTML interno de la carta con backticks
-      carta.innerHTML = `
-        <!-- Fondo de la carta -->
-        <div
-          class="fondo-personaje"
-          style="background-image: url('images/personajes/${p.id}/background.jpg');"
-        ></div>
-
-        <!-- Contenido: carrusel y texto -->
-        <div class="contenido-personaje">
-          <div class="carrusel-imagen">
-            <!-- Imagen inicial del carrusel -->
-            <img
-              src="images/personajes/${p.id}/${p.imagenes[0]}"
-              alt="${p.nombre}"
-              class="img-personaje"
-            >
-          </div>
-          <div class="texto-personaje">
-            <!-- Nombre y descripción -->
-            <h3 class="nombre-personaje">${p.nombre}</h3>
-            <p class="descripcion-personaje">${p.descripcion}</p>
-          </div>
-        </div>
-      `;
-
-      // 3.2.4 Añadir la carta al DOM dentro del contenedor
-      contenedor.appendChild(carta);
-
-      // 4. Preparar la lógica del carrusel en hover
-      const img = carta.querySelector(".carrusel-imagen img"); // Imagen dentro del carrusel
-      let index = 0;      // Índice de la imagen actual
-      let interval;       // Referencia al temporizador
-
-      // 4.1 Al colocar el cursor sobre la carta, iniciar el carrusel
-      carta.addEventListener("mouseenter", () => {
-        interval = setInterval(() => {
-          // Incrementar el índice y usar módulo para volver al inicio
-          index = (index + 1) % p.imagenes.length;
-          // Cambiar la fuente de la imagen al siguiente frame
-          img.src = `images/personajes/${p.id}/${p.imagenes[index]}`;
-        }, 2000); // Intervalo de cambio: 2000 ms (2 segundos)
-      });
-
-      // 4.2 Al retirar el cursor, detener el carrusel y resetear
-      carta.addEventListener("mouseleave", () => {
-        clearInterval(interval);             // Parar el setInterval
-        index = 0;                           // Volver al primer índice
-        img.src = `images/personajes/${p.id}/${p.imagenes[0]}`; // Imagen inicial
-      });
-    });
-  })
-  // 5. Manejo de errores general: si la petición falla, se muestra en consola
-  .catch((error) => console.error("Error cargando personajes:", error));

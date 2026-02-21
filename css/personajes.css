@@ -1,425 +1,366 @@
-/* ========================================================================
-   === personajes.css - Sección de Personajes con Carrusel Dinámico ===
-   ======================================================================== */
-
-/* --------------------- 1. Espaciado general de la sección --------------------- */
-
-/* ========================================================================
-   TARJETAS SIEMPRE NEGRAS (solo cambia el fondo general de la página)
-   ======================================================================== */
-
-/* Evitamos que el modo claro cambie el fondo de las cartas */
-body.light-mode .carta-personaje {
-  background-color: #000 !important;          /* Fondo negro fijo */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+﻿/* RESUMEN ARCHIVO: Estilos de la pagina personajes (navbar, filtros, grid y tarjetas dinamicas). */
+:root {
+  --db-black: #000;
+  --db-black-soft: #111;
+  --db-white: #fff;
+  --db-orange: #ffa500;
+  --db-orange-soft: #ffd27a;
+  --db-orange-strong: #c96c00;
 }
 
-/* Mantenemos el filtro de brillo para el fondo de personaje */
-body.light-mode .fondo-personaje {
-  filter: brightness(0.4) !important;
-}
-
-/* Cuando pasas el cursor, aclaramos un poco el fondo, igual que en modo oscuro */
-body.light-mode .carta-personaje:hover .fondo-personaje {
-  filter: brightness(0.6) !important;
-}
-
-/* Texto de descripción en modo claro: siempre blanco para buen contraste */
-body.light-mode .descripcion-personaje {
-  color: #fff !important;
-}
-
-/* ================================================
-   AJUSTADO: NAVBAR PERSONAJES + BODY + TARJETAS
-   ================================================ */
-
-/* === FONDO DEL BODY === */
 body {
-  background-color: #000;
+  background:
+    radial-gradient(circle at 10% 15%, rgba(255, 165, 0, 0.15), transparent 35%),
+    radial-gradient(circle at 90% 20%, rgba(255, 165, 0, 0.12), transparent 30%),
+    var(--db-black);
+  color: var(--db-white);
   transition: background-color 0.3s ease;
 }
 
 body.light-mode {
-  background-color: #f4f4f4;
+  background:
+    radial-gradient(circle at 10% 15%, rgba(255, 165, 0, 0.12), transparent 40%),
+    #f4f4f4;
+  color: #111;
 }
 
-/* === NAVBAR PERSONAJES === */
 .navbar-personajes {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(0, 0, 0, 0.6);
+  gap: 14px;
+  background: rgba(0, 0, 0, 0.78);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 0 15px rgba(255, 165, 0, 0.3);
-  padding: 20px 30px;
+  box-shadow: 0 8px 22px rgba(255, 165, 0, 0.28);
+  border-bottom: 1px solid rgba(255, 165, 0, 0.38);
+  padding: 14px 24px;
   position: sticky;
   top: 0;
   z-index: 1000;
-  transition: background 0.3s ease;
 }
 
 body.light-mode .navbar-personajes {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom-color: rgba(201, 108, 0, 0.32);
 }
 
-/* Logo */
 .navbar-personajes .logo img {
-  height: 70px;
-  filter: drop-shadow(0 0 5px #FFA500);
+  height: 64px;
+  filter: drop-shadow(0 0 5px var(--db-orange));
 }
 
-/* Frase dinámica */
 .navbar-personajes .frase-dinamica-pro {
   flex: 1;
   text-align: center;
-  color: #FFA500;
+  color: var(--db-orange);
   font-weight: 700;
-  font-size: 1.2rem;
-  animation: fadeIn 1s ease;
-  margin: 0 25px;
+  font-size: 1.05rem;
+  line-height: 1.3;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+  margin: 0 14px;
 }
 
-/* Botón modo claro/oscuro */
-.navbar-personajes #modo-toggle {
-  margin-left: auto;
-  padding: 8px 16px;
-  font-size: 1.3rem;
-  border: 2px solid #FFA500;
-  background-color: transparent;
-  color: #FFA500;
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(255, 165, 0, 0.4);
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+body.light-mode .navbar-personajes .frase-dinamica-pro {
+  color: var(--db-orange-strong);
+  text-shadow: none;
 }
 
-.navbar-personajes #modo-toggle:hover {
-  background-color: #FFA500;
-  color: #000;
-  transform: scale(1.05);
-}
-
-/* Menú */
 .navbar-personajes .menu {
   display: flex;
   list-style: none;
-  gap: 20px;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar-personajes .menu li a {
-  color: #fff;
-  font-weight: bold;
-  font-size: 1.1rem;
+  color: #f7f7f7;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 7px 10px;
+  border-radius: 8px;
   text-decoration: none;
-  transition: color 0.3s ease, transform 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
 }
 
 body.light-mode .navbar-personajes .menu li a {
-  color: #111;
+  color: #1f1f1f;
 }
 
 .navbar-personajes .menu li a:hover,
 .navbar-personajes .menu li a.active {
-  color: #FFA500;
-  transform: scale(1.1);
+  color: var(--db-orange);
+  background-color: rgba(255, 165, 0, 0.14);
+  transform: translateY(-1px) scale(1.01);
 }
 
-/* Hamburguesa */
+.navbar-personajes #modo-toggle {
+  min-width: 66px;
+  font-weight: 700;
+  border: 2px solid var(--db-orange);
+  color: var(--db-orange);
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(255, 165, 0, 0.36);
+}
+
+body.light-mode .navbar-personajes #modo-toggle {
+  color: var(--db-orange-strong);
+  border-color: var(--db-orange-strong);
+  background: rgba(255, 255, 255, 0.5);
+}
+
 .navbar-personajes .menu-toggle {
   display: none;
   font-size: 1.8rem;
-  color: #FFA500;
+  color: var(--db-orange);
   cursor: pointer;
-}
-
-/* Responsive */
-@media screen and (max-width: 768px) {
-  .navbar-personajes {
-    flex-wrap: wrap;
-    padding: 15px 20px;
-  }
-  .navbar-personajes .menu-toggle {
-    display: block;
-  }
-  .navbar-personajes .menu {
-    flex-direction: column;
-    width: 100%;
-    display: none;
-    margin-top: 10px;
-    background: rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
-    padding: 10px;
-  }
-  .navbar-personajes .menu.show {
-    display: flex;
-  }
-  .navbar-personajes .frase-dinamica-pro {
-    width: 100%;
-    margin: 10px 0;
-    font-size: 1rem;
-  }
-  .navbar-personajes #modo-toggle {
-    margin: 10px 0 0 0;
-  }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* === TARJETAS PERSONAJES === */
-.carta-personaje {
-  background-color: #000;
-  transition: background-color 0.3s ease;
-}
-
-body.light-mode .carta-personaje {
-  background-color: #111;
-}
-
-/* =============================
-  Estilos para título, buscador y filtro
-  Dragon Ball History - Personajes
-   ============================= */
-
-/* Título principal */
-.titulo-personajes {
-  font-family: 'Luckiest Guy', cursive;
-  font-size: 3rem;
-  color: #FFA500;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-/* Contenedor del buscador y filtro */
-.buscador-filtro {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 40px;
-}
-
-/* Input de búsqueda */
-#buscador-personajes {
-  max-width: 300px;
-  border: 2px solid #FFA500;
+  padding: 4px 10px;
   border-radius: 8px;
-  padding: 10px 15px;
-  font-size: 1rem;
-  color: #111;
+  border: 1px solid rgba(255, 165, 0, 0.5);
 }
 
-/* Select de filtro */
-#filtro-saga {
-  max-width: 200px;
-  border: 2px solid #FFA500;
-  border-radius: 8px;
-  padding: 10px 15px;
-  font-size: 1rem;
-  color: #111;
+body.light-mode .navbar-personajes .menu-toggle {
+  color: var(--db-orange-strong);
+  border-color: rgba(201, 108, 0, 0.45);
 }
 
-/* Modo oscuro: mantener input y select acordes */
-body:not(.light-mode) #buscador-personajes,
-body:not(.light-mode) #filtro-saga {
-  background: #000;
-  color: #fff;
-  border-color: #FFA500;
+.navbar-personajes .menu li a:focus-visible,
+.navbar-personajes .menu-toggle:focus-visible,
+.navbar-personajes #modo-toggle:focus-visible {
+  outline: 3px solid rgba(255, 165, 0, 0.45);
+  outline-offset: 2px;
 }
-
-body.light-mode #buscador-personajes,
-body.light-mode #filtro-saga {
-  background: #fff;
-  color: #111;
-  border-color: #FFA500;
-}
-
 
 #seccion-personajes {
-  padding: 80px 20px;
+  padding-top: 56px;
+  padding-bottom: 72px;
 }
 
-/* --------------------- 2. Grid de tarjetas (4 → 2 → 1 columnas) --------------------- */
+.encabezado-personajes {
+  margin-bottom: 36px;
+}
+
+.titulo-personajes {
+  font-family: "Luckiest Guy", cursive;
+  font-size: clamp(2.2rem, 6vw, 3.3rem);
+  letter-spacing: 1px;
+  color: var(--db-orange);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.subtitulo-personajes {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.85);
+  margin-bottom: 24px;
+}
+
+body.light-mode .subtitulo-personajes {
+  color: #333;
+}
+
+.buscador-filtro {
+  display: grid;
+  grid-template-columns: minmax(220px, 340px) minmax(180px, 220px);
+  justify-content: center;
+  gap: 14px;
+}
+
+#buscador-personajes,
+#filtro-saga {
+  border: 2px solid var(--db-orange);
+  border-radius: 12px;
+  padding: 11px 14px;
+  font-size: 0.96rem;
+  box-shadow: 0 0 0 0 transparent;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+#buscador-personajes:focus,
+#filtro-saga:focus {
+  border-color: var(--db-orange-soft);
+  box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.2);
+}
+
+body:not(.light-mode) #buscador-personajes,
+body:not(.light-mode) #filtro-saga {
+  background: var(--db-black);
+  color: var(--db-white);
+}
+
 .grid-personajes {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columnas en escritorio */
-  gap: 30px;                             /* Espacio entre cartas */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
 }
 
-@media screen and (max-width: 992px) {
-  .grid-personajes {
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .grid-personajes {
-    grid-template-columns: 1fr; /* 1 columna en móviles */
-  }
-}
-
-/* --------------------- 3. Tarjeta de personaje (carta-personaje) --------------------- */
 .carta-personaje {
   position: relative;
   overflow: hidden;
-  width: 300px;               /* Ancho fijo para todas las cartas */
-  height: 500px;              /* Alto fijo para todas las cartas */
-  border-radius: 20px;
-  margin: 0 auto 60px;        /* Centrada horizontalmente y margen inferior */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  background-color: #000;     /* Fondo oscuro base (se ajustará en light-mode) */
-  transition: transform 0.4s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  min-height: 460px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 165, 0, 0.3);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.38);
+  background: var(--db-black-soft);
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
 }
 
-/* Efecto hover: escala ligeramente la carta */
 .carta-personaje:hover {
-  transform: scale(1.02);
+  transform: translateY(-6px);
+  border-color: rgba(255, 165, 0, 0.78);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.48);
 }
 
-/* --------------------- 4. Fondo de la carta (fondo-personaje) --------------------- */
 .fondo-personaje {
   position: absolute;
-  inset: 0;                   /* top:0; right:0; bottom:0; left:0 */
+  inset: 0;
   background-size: cover;
   background-position: center;
-  filter: brightness(0.4);    /* Oscurece fondo para resaltar contenido */
-  z-index: 0;                 /* Debajo del contenido */
-  transition: filter 0.3s ease;
+  filter: brightness(0.36);
+  z-index: 0;
+  transition: filter 0.25s ease;
 }
 
-/* Al hacer hover, aclara un poco el fondo */
 .carta-personaje:hover .fondo-personaje {
-  filter: brightness(0.6);
+  filter: brightness(0.5);
 }
 
-/* --------------------- 5. Contenido interno de la carta --------------------- */
 .contenido-personaje {
   position: relative;
-  z-index: 2;                     /* Encima del fondo */
+  z-index: 2;
+  height: 100%;
   display: flex;
-  flex-direction: column;         /* Apila imagen y texto verticalmente */
-  align-items: center;
-  justify-content: flex-start;    /* Texto bajo la imagen */
-  padding: 20px;                  /* Espacio interno */
-  height: 100%;                   /* Imperativo para centrar verticalmente si es necesario */
-  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 18px;
+  gap: 14px;
 }
 
-/* ------------------------------------------------------------------------
-   6. Carrusel de imágenes (carrusel-imagen) — Ajuste para mostrar la imagen completa
-   ------------------------------------------------------------------------ */
-
-/* Ajustamos el contenedor del carrusel a un alto fijo (por ejemplo, 300px),
-   y el ancho al 100% de la carta. Así nos aseguramos de que todas las imágenes
-   tengan el mismo “marco” y no varíen de tamaño. */
 .carrusel-imagen {
-  width: 100%;            /* Ocupa todo el ancho de la carta */
-  height: 300px;          /* Alto fijo para que no cambie según el contenido */
-  position: relative;
-  overflow: hidden;       /* Recorta cualquier parte que sobresalga del marco */
-  border-radius: 10px;    /* Esquinas redondeadas internamente */
-  margin-bottom: 20px;    /* Espacio debajo del carrusel */
+  align-self: center;
+  width: 100%;
+  max-width: 250px;
+  height: 250px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.45));
 }
 
-/* Dentro del carrusel, la imagen ocupará hasta el 100% del contenedor,
-   pero mantendrá su proporción original (object-fit: contain). */
 .carrusel-imagen img {
   width: 100%;
   height: 100%;
-  object-fit: contain;    /* “contain” asegura que se vea toda la imagen sin recortes */
-  transition: transform 0.3s ease, filter 0.3s ease;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+  transition: transform 0.24s ease, filter 0.24s ease;
 }
 
-/* Cuando pases el cursor sobre la imagen, aún la ampliamos un poco. */
-.carrusel-imagen:hover img {
-  transform: scale(1.05);
-}
-
-/* Al hacer hover en toda la carta, reforzamos el drop-shadow sobre la imagen. */
 .carta-personaje:hover .carrusel-imagen img {
-  filter: drop-shadow(0 0 15px #FFA500);
+  transform: scale(1.04);
+  filter: drop-shadow(0 0 12px rgba(255, 165, 0, 0.82));
 }
 
-/* --------------------- 7. Texto: nombre y descripción --------------------- */
+.texto-personaje {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.5));
+  border-radius: 12px;
+  padding: 12px;
+}
 
-/* Nombre del personaje: oculto por defecto */
 .nombre-personaje {
-  font-size: 2rem;
-  color: #FFA500;
-  margin-bottom: 10px;
-  opacity: 0;                        /* Invisibilidad inicial */
-  transition: opacity 0.3s ease;
+  font-size: 1.4rem;
+  color: var(--db-orange);
+  margin-bottom: 8px;
+  text-align: center;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
 }
 
-/* Aparece el nombre al hacer hover en la carta */
-.carta-personaje:hover .nombre-personaje {
-  opacity: 1;
-}
-
-/* Descripción: oculta por defecto */
 .descripcion-personaje {
-  font-size: 1.2rem;
-  color: #fff;
-  max-width: 260px;                 /* Alineado al ancho de la carta menos gap */
-  line-height: 1.6;
-  text-align: center;               /* Centrar texto */
-  opacity: 0;                       /* Invisibilidad inicial */
-  transition: opacity 0.3s ease;
+  font-size: 0.98rem;
+  color: var(--db-white);
+  line-height: 1.5;
+  margin: 0;
+  text-align: center;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-/* Al hacer hover en la carta, aparece la descripción */
 .carta-personaje:hover .descripcion-personaje {
-  opacity: 1;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
 }
 
-/* --------------------- 8. Adaptación al modo claro (light-mode) --------------------- */
-body.light-mode .carta-personaje {
-  background-color: #f9f9f9;         /* Fondo claro en el modo claro */
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+.sin-resultados {
+  margin-top: 26px;
+  text-align: center;
+  color: var(--db-orange);
+  font-weight: 700;
+  font-size: 1.05rem;
 }
 
-body.light-mode .fondo-personaje {
-  filter: brightness(0.6);           /* Fondo menos oscuro en light-mode */
+.carta-personaje.is-hidden {
+  display: none;
 }
 
-body.light-mode .carta-personaje:hover .fondo-personaje {
-  filter: brightness(0.8);           /* Aclara más al hacer hover */
-}
-
+body.light-mode .carta-personaje,
+body.light-mode .texto-personaje,
 body.light-mode .descripcion-personaje {
-  color: #333;                       /* Texto oscuro en modo claro */
+  color: var(--db-white);
 }
 
-/* --------------------- 9. Ajustes responsive adicionales --------------------- */
-@media screen and (max-width: 600px) {
-  /* Contenido en columna y centrado en móviles */
-  .contenido-personaje {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 10px;                   /* Reduce padding en móviles */
+@media (max-width: 991px) {
+  .navbar-personajes {
+    flex-wrap: wrap;
+    padding: 12px 16px;
   }
 
-  /* Ajusta la altura total de la carta en móviles si es necesario */
+  .navbar-personajes .menu-toggle {
+    display: block;
+  }
+
+  .navbar-personajes .menu {
+    display: none;
+    width: 100%;
+    margin-top: 8px;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.92);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 165, 0, 0.3);
+    padding: 12px;
+  }
+
+  .navbar-personajes .menu.show {
+    display: flex;
+  }
+
+  body.light-mode .navbar-personajes .menu {
+    background: rgba(255, 255, 255, 0.98);
+    border-color: rgba(201, 108, 0, 0.25);
+  }
+
+  .navbar-personajes .frase-dinamica-pro {
+    width: 100%;
+    order: 3;
+    margin-top: 4px;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .buscador-filtro {
+    grid-template-columns: 1fr;
+  }
+
   .carta-personaje {
-    width: 100%;                     /* Ocupa todo el ancho disponible */
-    height: auto;                    /* Alto automático para ajustarse al contenido */
+    min-height: 420px;
   }
 
   .carrusel-imagen {
-    height: 250px;                   /* Altura reducida en móviles */
-    margin-bottom: 15px;
-  }
-
-  .nombre-personaje {
-    font-size: 1.8rem;
-  }
-
-  .descripcion-personaje {
-    font-size: 1rem;
-    max-width: 240px;
-    margin-bottom: 10px;
+    max-width: 220px;
+    height: 220px;
   }
 }
+

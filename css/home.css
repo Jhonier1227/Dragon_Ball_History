@@ -1,3 +1,4 @@
+﻿/* RESUMEN ARCHIVO: Estilos exclusivos de la pagina de inicio (hero, secciones destacadas, navbar y animaciones visuales). */
 /* Fuente global */
 body {
     font-family:'Poppins', sans-serif;
@@ -11,7 +12,7 @@ h1, h2 {
 }
 
 
-/* Menú oculto */
+/* MenÃº oculto */
 /* Estilo del navbar */
 .navbar {
     position: fixed;
@@ -46,7 +47,7 @@ h1, h2 {
     height: 50px;
 }
 
-/* Menú principal */
+/* MenÃº principal */
 .menu {
     list-style: none;
     display: flex;
@@ -69,7 +70,7 @@ h1, h2 {
     color: #ffcc00;
 }
 
-/* Botón hamburguesa */
+/* BotÃ³n hamburguesa */
 .menu-toggle {
     display: none;
     font-size: 30px;
@@ -105,7 +106,7 @@ h1, h2 {
 }
 
 
-/* Frase dinámica PRO */
+/* Frase dinÃ¡mica PRO */
 .frase-dinamica-pro {
     flex: 1;
     text-align: center;
@@ -164,7 +165,7 @@ h1, h2 {
     transform: scale(1.05);
 }
 
-/* Bolas del Dragón */
+/* Bolas del DragÃ³n */
 .bolas-container {
     position: fixed;
     top: 0;
@@ -244,7 +245,7 @@ font-family: 'Luckiest Guy', cursive;
     text-shadow: 1px 1px 5px #000;
 }
 
-/* Sección Introducción */
+/* SecciÃ³n IntroducciÃ³n */
 .intro-section {
     padding: 100px 20px;
     background: #111;
@@ -425,7 +426,7 @@ font-family: 'Luckiest Guy', cursive;
 }
 
 
-/* Curiosidades Rápidas */
+/* Curiosidades RÃ¡pidas */
 .curiosidades-section {
     padding: 100px 10%;
     text-align: center;
@@ -479,7 +480,7 @@ font-family: 'Luckiest Guy', cursive;
     box-shadow: 0 0 25px rgba(255, 204, 0, 0.5);
 }
 
-/* Sección de Llamado a la Acción */
+/* SecciÃ³n de Llamado a la AcciÃ³n */
 .cta-section {
     position: relative;
     background: linear-gradient(180deg, #0b0b0b, #1a1a1a);
@@ -554,7 +555,7 @@ font-family: 'Luckiest Guy', cursive;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 99999; /* Super alto para que esté arriba de todo */
+    z-index: 99999; /* Super alto para que estÃ© arriba de todo */
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -576,3 +577,4 @@ font-family: 'Luckiest Guy', cursive;
     transform: scale(1.2);
     background-color: rgba(255, 204, 0, 0.8);
 }
+

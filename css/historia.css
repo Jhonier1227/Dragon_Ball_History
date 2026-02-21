@@ -1,3 +1,4 @@
+﻿/* RESUMEN ARCHIVO: Estilos de la pagina historia (timeline, tarjetas de saga, navbar y efectos de scroll). */
 /* === VARIABLES (FUTURO) === */
 :root {
   --color-naranja: #FFA500;
@@ -6,7 +7,7 @@
   --color-oscuro: #111;
 }
 
-/* === RESET BÁSICO === */
+/* === RESET BÃSICO === */
 body {
   margin: 0;
   padding: 0;
@@ -403,3 +404,4 @@ body {
     height: auto;
   }
 }
+

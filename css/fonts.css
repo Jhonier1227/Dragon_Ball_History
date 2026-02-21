@@ -1,3 +1,4 @@
+﻿/* RESUMEN ARCHIVO: Definicion e importacion de fuentes tipograficas del proyecto. */
 @font-face {
     font-family: 'SaiyanSans';
     src: url('../fonts/saiyan-sans/Saiyan-Sans.ttf') format('truetype');
@@ -18,3 +19,4 @@
     font-weight: normal;
     font-style: oblique;
 }
+
