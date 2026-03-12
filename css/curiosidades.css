@@ -1,1 +1,169 @@
-﻿/* RESUMEN ARCHIVO: Hoja reservada para estilos de curiosidades. Pendiente de implementacion. */
+﻿/* RESUMEN ARCHIVO: Estilos de la pagina curiosidades. Usa la paleta negro/naranja del sitio. */
+
+body {
+  background: radial-gradient(circle at 15% 10%, rgba(255, 165, 0, 0.15), transparent 35%), #000;
+  color: #fff;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  padding: 16px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 6px 20px rgba(255, 165, 0, 0.25);
+}
+
+.navbar .logo img {
+  height: 64px;
+  filter: drop-shadow(0 0 5px #ffa500);
+}
+
+.navbar .frase-dinamica-pro {
+  flex: 1;
+  text-align: center;
+  color: #ffa500;
+  font-weight: 700;
+}
+
+.navbar .menu {
+  display: flex;
+  list-style: none;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .menu li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.navbar .menu li a:hover,
+.navbar .menu li a.active {
+  color: #ffa500;
+  transform: translateY(-1px);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: #ffa500;
+  cursor: pointer;
+}
+
+.hero-curiosidades {
+  position: relative;
+  min-height: 55vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url("images/fondos/fondo_home.jpg") center/cover no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.4rem, 5vw, 3.5rem);
+  color: #ffa500;
+}
+
+.hero-content p {
+  margin: 12px 0 22px;
+  color: #ddd;
+}
+
+.btn-cta {
+  display: inline-block;
+  background: #ffa500;
+  color: #000;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.contenedor-curiosidades {
+  padding: 60px 20px 80px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.grid-curiosidades {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.card-curiosidad {
+  background: rgba(0, 0, 0, 0.85);
+  border: 1px solid rgba(255, 165, 0, 0.35);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+}
+
+.card-curiosidad img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.card-curiosidad h3 {
+  color: #ffa500;
+  margin-bottom: 8px;
+}
+
+.cta-curiosidades {
+  margin-top: 40px;
+  padding: 24px;
+  text-align: center;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255, 165, 0, 0.2), rgba(0, 0, 0, 0.8));
+  border: 1px solid rgba(255, 165, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar .menu {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 12px;
+    padding: 12px;
+    margin-top: 8px;
+  }
+
+  .navbar .menu.show {
+    display: flex;
+  }
+}
