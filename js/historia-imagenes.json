@@ -1,0 +1,37 @@
+{
+  "version": "1.0",
+  "descripcion": "Mapa central para las imagenes de la seccion Historia.",
+  "plantilla": {
+    "slots": ["hero", "poster", "logo", "escena_01", "escena_02", "escena_03"],
+    "nota": "Completa los nombres de archivo cuando pegues las imagenes finales."
+  },
+  "series": [
+    {
+      "id": "dragon-ball",
+      "nombre": "Dragon Ball",
+      "totalEpisodios": 153,
+      "carpetaBase": "images/historia/sagas/dragon-ball"
+    },
+    {
+      "id": "dragon-ball-z",
+      "nombre": "Dragon Ball Z",
+      "totalEpisodios": 291,
+      "carpetaBase": "images/historia/sagas/dragon-ball-z"
+    }
+  ],
+  "sagas": [
+    {"id": "emperador-pilaf", "serie": "dragon-ball", "nombre": "Saga del Emperador Pilaf", "rutaHtml": "Historia/Dragon-Ball/saga-emperador-pilaf.html", "carpetaImagenes": "images/historia/sagas/dragon-ball/emperador-pilaf", "imagenes": {"hero": "", "poster": "", "logo": "", "escena_01": "", "escena_02": "", "escena_03": ""}},
+    {"id": "torneo-21", "serie": "dragon-ball", "nombre": "Saga del 21 Torneo de Artes Marciales", "rutaHtml": "Historia/Dragon-Ball/saga-torneo-21.html", "carpetaImagenes": "images/historia/sagas/dragon-ball/torneo-21", "imagenes": {"hero": "", "poster": "", "logo": "", "escena_01": "", "escena_02": "", "escena_03": ""}},
+    {"id": "red-ribbon", "serie": "dragon-ball", "nombre": "Saga del Ejercito Red Ribbon", "rutaHtml": "Historia/Dragon-Ball/saga-red-ribbon.html", "carpetaImagenes": "images/historia/sagas/dragon-ball/red-ribbon", "imagenes": {"hero": "", "poster": "", "logo": "", "escena_01": "", "escena_02": "", "escena_03": ""}},
+    {"id": "uranai-baba", "serie": "dragon-ball", "nombre": "Saga de Uranai Baba", "rutaHtml": "Historia/Dragon-Ball/saga-uranai-baba.html", "carpetaImagenes": "images/historia/sagas/dragon-ball/uranai-baba", "imagenes": {"hero": "", "poster": "", "logo": "", "escena_01": "", "escena_02": "", "escena_03": ""}},
+    {"id": "torneo-22", "serie": "dragon-ball", "nombre": "Saga del 22 Torneo de Artes Marciales", "rutaHtml": "Historia/Dragon-Ball/saga-torneo-22.html", "carpetaImagenes": "images/historia/sagas/dragon-ball/torneo-22", "imagenes": {"hero": "", "poster": "", "logo": "", "escena_01": "", "escena_02": "", "escena_03": ""}},
+    {"id": "piccolo-daimaoh", "serie": "dragon-ball", "nombre": "Saga de Piccolo Daimaoh", "rutaHtml": "Historia/Dragon-Ball/saga-piccolo-daimaoh.html", "carpetaImagenes": "images/historia/sagas/dragon-ball/piccolo-daimaoh", "imagenes": {"hero": "", "poster": "", "logo": "", "escena_01": "", "escena_02": "", "escena_03": ""}},
+    {"id": "torneo-23", "serie": "dragon-ball", "nombre": "Saga del 23 Torneo de Artes Marciales", "rutaHtml": "Historia/Dragon-Ball/saga-torneo-23.html", "carpetaImagenes": "images/historia/sagas/dragon-ball/torneo-23", "imagenes": {"hero": "", "poster": "", "logo": "", "escena_01": "", "escena_02": "", "escena_03": ""}},
+    {"id": "saiyajin", "serie": "dragon-ball-z", "nombre": "Saga de los Saiyajin", "rutaHtml": "Historia/Dragon-Ball-Z/saga-saiyajin.html", "carpetaImagenes": "images/historia/sagas/dragon-ball-z/saiyajin", "imagenes": {"hero": "", "poster": "", "logo": "", "escena_01": "", "escena_02": "", "escena_03": ""}},
+    {"id": "freezer", "serie": "dragon-ball-z", "nombre": "Saga de Freezer", "rutaHtml": "Historia/Dragon-Ball-Z/saga-freezer.html", "carpetaImagenes": "images/historia/sagas/dragon-ball-z/freezer", "imagenes": {"hero": "", "poster": "", "logo": "", "escena_01": "", "escena_02": "", "escena_03": ""}},
+    {"id": "androides-cell", "serie": "dragon-ball-z", "nombre": "Saga de los Androides y Cell", "rutaHtml": "Historia/Dragon-Ball-Z/saga-androides-cell.html", "carpetaImagenes": "images/historia/sagas/dragon-ball-z/androides-cell", "imagenes": {"hero": "", "poster": "", "logo": "", "escena_01": "", "escena_02": "", "escena_03": ""}},
+    {"id": "gran-saiyaman", "serie": "dragon-ball-z", "nombre": "Saga del Gran Saiyaman", "rutaHtml": "Historia/Dragon-Ball-Z/saga-gran-saiyaman.html", "carpetaImagenes": "images/historia/sagas/dragon-ball-z/gran-saiyaman", "imagenes": {"hero": "", "poster": "", "logo": "", "escena_01": "", "escena_02": "", "escena_03": ""}},
+    {"id": "torneo-25", "serie": "dragon-ball-z", "nombre": "Saga del 25 Torneo de Artes Marciales", "rutaHtml": "Historia/Dragon-Ball-Z/saga-torneo-25.html", "carpetaImagenes": "images/historia/sagas/dragon-ball-z/torneo-25", "imagenes": {"hero": "", "poster": "", "logo": "", "escena_01": "", "escena_02": "", "escena_03": ""}},
+    {"id": "majin-buu", "serie": "dragon-ball-z", "nombre": "Saga de Majin Buu", "rutaHtml": "Historia/Dragon-Ball-Z/saga-majin-buu.html", "carpetaImagenes": "images/historia/sagas/dragon-ball-z/majin-buu", "imagenes": {"hero": "", "poster": "", "logo": "", "escena_01": "", "escena_02": "", "escena_03": ""}}
+  ]
+}

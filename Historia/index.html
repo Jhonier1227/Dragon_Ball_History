@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Historia Organizada | Dragon Ball History</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/historia/detalle-sagas.css">
+</head>
+<body class="historia-layout">
+  <header class="historia-topbar">
+    <div class="historia-shell">
+      <a class="historia-brand" href="../historia.html">
+        <strong>Dragon Ball History</strong>
+        <span>Ruta organizada del apartado Historia</span>
+      </a>
+      <nav class="historia-nav">
+        <a href="../index.html">Inicio</a>
+        <a href="../historia.html">Timeline principal</a>
+        <a class="is-active" href="index.html">Historia</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="historia-hero">
+      <div class="historia-shell">
+        <article class="historia-hero-card">
+          <div class="historia-hero-grid">
+            <div>
+              <span class="historia-kicker">Nueva estructura</span>
+              <h1>Historia separada por temporada y por saga</h1>
+              <p>
+                Este modulo deja lista una arquitectura escalable para que sigamos con las siguientes temporadas sin desordenar el proyecto.
+                Cada temporada tiene su propio indice, cada saga tiene su HTML independiente y todas comparten la misma base CSS y el mismo mapa de imagenes.
+              </p>
+              <div class="historia-actions">
+                <a class="btn-historia btn-historia-primary" href="Dragon-Ball/index.html">Entrar a Dragon Ball</a>
+                <a class="btn-historia btn-historia-secondary" href="Dragon-Ball-Z/index.html">Entrar a Dragon Ball Z</a>
+              </div>
+            </div>
+            <aside class="historia-stat-panel">
+              <div class="historia-stat-box"><strong>2</strong><span>temporadas iniciales organizadas</span></div>
+              <div class="historia-stat-box"><strong>13</strong><span>paginas de saga listas para continuar</span></div>
+              <div class="historia-panel"><p>El archivo <code>js/historia-imagenes.json</code> centraliza las rutas visuales para que luego solo editemos nombres de archivo y no la maqueta.</p></div>
+            </aside>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="historia-section">
+      <div class="historia-shell historia-grid historia-grid-2">
+        <article class="historia-card historia-series-card">
+          <div class="historia-badge-row">
+            <span class="historia-badge">153 episodios</span>
+            <span class="historia-badge">7 sagas</span>
+            <span class="historia-badge">Aventura y origen</span>
+          </div>
+          <h2>Dragon Ball</h2>
+          <p>La primera serie cubre la infancia de Goku, la busqueda de las esferas del dragon, su formacion como artista marcial y el crecimiento de rivalidades que construyen toda la base del universo.</p>
+          <div class="historia-saga-grid">
+            <div class="historia-mini-card"><strong>Incluye</strong><p>Pilaf, Torneo 21, Red Ribbon, Uranai Baba, Torneo 22, Piccolo Daimaoh y Torneo 23.</p></div>
+            <div class="historia-mini-card"><strong>Uso ideal</strong><p>Perfecto para paginas centradas en origen, relaciones y evolucion de Goku antes de Z.</p></div>
+          </div>
+          <a class="btn-historia btn-historia-primary" href="Dragon-Ball/index.html">Ver temporada</a>
+        </article>
+
+        <article class="historia-card historia-series-card">
+          <div class="historia-badge-row">
+            <span class="historia-badge">291 episodios</span>
+            <span class="historia-badge">6 bloques principales</span>
+            <span class="historia-badge">Escala planetaria</span>
+          </div>
+          <h2>Dragon Ball Z</h2>
+          <p>La segunda etapa lleva la historia a conflictos de alcance universal: linaje saiyajin, Namek, Freezer, Cell, Gohan, fusiones y la batalla final contra Majin Buu.</p>
+          <div class="historia-saga-grid">
+            <div class="historia-mini-card"><strong>Incluye</strong><p>Saiyajin, Freezer, Androides y Cell, Gran Saiyaman, Torneo 25 y Majin Buu.</p></div>
+            <div class="historia-mini-card"><strong>Uso ideal</strong><p>Perfecto para paginas con resumenes grandes, progresion de poder y eventos determinantes del canon televisivo.</p></div>
+          </div>
+          <a class="btn-historia btn-historia-primary" href="Dragon-Ball-Z/index.html">Ver temporada</a>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
