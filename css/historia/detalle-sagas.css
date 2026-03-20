@@ -1,0 +1,472 @@
+:root {
+  --historia-bg: #05070d;
+  --historia-panel: rgba(10, 15, 25, 0.9);
+  --historia-panel-soft: rgba(255, 255, 255, 0.06);
+  --historia-border: rgba(255, 166, 0, 0.28);
+  --historia-accent: #ff8c1a;
+  --historia-accent-2: #ffd166;
+  --historia-text: #f8f4ea;
+  --historia-muted: #c7c9d3;
+  --historia-shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+  --historia-radius: 24px;
+  --historia-max: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body.historia-layout {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  color: var(--historia-text);
+  background:
+    radial-gradient(circle at top, rgba(255, 140, 26, 0.2), transparent 32%),
+    linear-gradient(180deg, #0a1120 0%, #05070d 48%, #030406 100%);
+}
+
+.historia-layout a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.historia-shell {
+  width: min(calc(100% - 32px), var(--historia-max));
+  margin: 0 auto;
+}
+
+.historia-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(14px);
+  background: rgba(3, 5, 10, 0.82);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.historia-topbar .historia-shell {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 0;
+}
+
+.historia-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.historia-brand strong {
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+}
+
+.historia-brand span {
+  color: var(--historia-muted);
+  font-size: 0.9rem;
+}
+
+.historia-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.historia-nav a {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid transparent;
+  transition: 0.25s ease;
+}
+
+.historia-nav a:hover,
+.historia-nav a.is-active {
+  border-color: var(--historia-border);
+  background: rgba(255, 140, 26, 0.12);
+  transform: translateY(-2px);
+}
+
+.historia-hero {
+  padding: 72px 0 40px;
+}
+
+.historia-hero-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 32px;
+  background:
+    linear-gradient(135deg, rgba(255, 140, 26, 0.2), rgba(4, 8, 16, 0.86)),
+    var(--historia-panel);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--historia-shadow);
+}
+
+.historia-hero-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(120deg, rgba(255, 140, 26, 0.18), transparent 34%),
+    radial-gradient(circle at right top, rgba(255, 209, 102, 0.14), transparent 26%);
+  pointer-events: none;
+}
+
+.historia-hero-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+  gap: 28px;
+  padding: 40px;
+}
+
+.historia-kicker {
+  display: inline-flex;
+  width: fit-content;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--historia-border);
+  background: rgba(255, 140, 26, 0.12);
+  color: var(--historia-accent-2);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.historia-hero h1 {
+  margin: 18px 0 12px;
+  font-size: clamp(2.2rem, 4vw, 4.3rem);
+  line-height: 0.98;
+}
+
+.historia-hero p {
+  margin: 0;
+  max-width: 64ch;
+  color: var(--historia-muted);
+  font-size: 1.03rem;
+  line-height: 1.7;
+}
+
+.historia-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.btn-historia {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: 0.25s ease;
+}
+
+.btn-historia-primary {
+  background: linear-gradient(135deg, #ff8c1a, #ffb347);
+  color: #1f1100;
+}
+
+.btn-historia-secondary {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.btn-historia:hover {
+  transform: translateY(-2px);
+}
+
+.historia-stat-panel {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.historia-stat-box,
+.historia-panel {
+  padding: 22px;
+  border-radius: var(--historia-radius);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.historia-stat-box strong {
+  display: block;
+  font-size: 2rem;
+  color: var(--historia-accent-2);
+}
+
+.historia-stat-box span,
+.historia-panel p,
+.historia-panel li,
+.historia-panel dd {
+  color: var(--historia-muted);
+  line-height: 1.7;
+}
+
+.historia-section {
+  padding: 18px 0 34px;
+}
+
+.historia-section-title {
+  margin: 0 0 18px;
+  font-size: 1.7rem;
+}
+
+.historia-grid {
+  display: grid;
+  gap: 22px;
+}
+
+.historia-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.historia-card {
+  padding: 24px;
+  border-radius: var(--historia-radius);
+  background: var(--historia-panel);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--historia-shadow);
+}
+
+.historia-card h2,
+.historia-card h3 {
+  margin-top: 0;
+}
+
+.historia-card p,
+.historia-card li,
+.historia-card dd {
+  color: var(--historia-muted);
+  line-height: 1.75;
+}
+
+.historia-list {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.historia-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.historia-meta .historia-card {
+  padding: 18px 20px;
+}
+
+.historia-meta strong,
+.historia-mini-card strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--historia-accent-2);
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.historia-mini-card {
+  padding: 18px 20px;
+  border-radius: 20px;
+  background: var(--historia-panel-soft);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.historia-series-card {
+  display: grid;
+  gap: 18px;
+}
+
+.historia-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.historia-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: rgba(255, 140, 26, 0.12);
+  border: 1px solid var(--historia-border);
+  color: var(--historia-accent-2);
+  font-size: 0.88rem;
+}
+
+.historia-saga-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.historia-saga-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 22px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(4, 8, 16, 0.85));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--historia-shadow);
+}
+
+.historia-saga-card h3 {
+  margin: 0;
+}
+
+.historia-saga-card p {
+  margin: 0;
+  color: var(--historia-muted);
+  line-height: 1.7;
+}
+
+.historia-platform {
+  display: grid;
+  gap: 10px;
+  padding: 18px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.historia-platform h3 {
+  margin: 0;
+}
+
+.historia-platform small {
+  color: var(--historia-accent-2);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.historia-platform p {
+  margin: 0;
+}
+
+.historia-image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.image-slot {
+  position: relative;
+  min-height: 220px;
+  border-radius: 24px;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(4, 8, 16, 0.92)),
+    #09101a;
+  border: 1px dashed rgba(255, 209, 102, 0.35);
+}
+
+.image-slot.is-wide {
+  min-height: 280px;
+}
+
+.image-slot-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 20px;
+  background: linear-gradient(180deg, transparent, rgba(5, 7, 13, 0.92));
+}
+
+.image-slot span {
+  width: fit-content;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 140, 26, 0.14);
+  border: 1px solid rgba(255, 140, 26, 0.28);
+  color: var(--historia-accent-2);
+  font-size: 0.76rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.image-slot strong {
+  font-size: 1.1rem;
+}
+
+.image-slot p {
+  margin: 0;
+  color: var(--historia-muted);
+}
+
+.historia-path-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.historia-path-item {
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.historia-path-item code {
+  display: inline-block;
+  margin-top: 6px;
+  color: var(--historia-accent-2);
+  word-break: break-all;
+}
+
+@media (max-width: 900px) {
+  .historia-hero-grid,
+  .historia-grid-2,
+  .historia-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .historia-topbar .historia-shell {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .historia-nav {
+    justify-content: flex-start;
+  }
+
+  .historia-hero-grid {
+    padding: 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .historia-shell {
+    width: min(calc(100% - 20px), var(--historia-max));
+  }
+
+  .historia-hero {
+    padding-top: 52px;
+  }
+
+  .historia-hero-grid {
+    padding: 22px;
+  }
+
+  .historia-saga-card,
+  .historia-card,
+  .historia-stat-box,
+  .historia-panel {
+    padding: 18px;
+  }
+}
