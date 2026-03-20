@@ -1,4 +1,196 @@
-﻿<!-- RESUMEN ARCHIVO: Plantilla base para la futura pagina de galeria. Actualmente solo referencia inclusion del header. -->
-<!-- AquÃ­ se incluye el header -->
-<!-- Copiar contenido de /partials/header.html -->
+<!DOCTYPE html>
+<!-- RESUMEN ARCHIVO: Pagina de galeria. Muestra un mosaico responsive con filtros visuales y visor ampliado. -->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria - Dragon Ball History</title>
+  <link rel="icon" href="images/logos/LogoZ.png" type="image/png">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/galeria.css">
+</head>
+<body>
+  <nav class="navbar navbar-galeria navbar-dark">
+    <div class="logo">
+      <img src="images/logos/LogoPri.png" alt="Logo Dragon Ball">
+    </div>
+
+    <div class="frase-dinamica-pro" id="frase-dinamica-pro"></div>
+
+    <div class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" role="button" tabindex="0">&#9776;</div>
+
+    <ul class="menu" id="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="historia.html">Historia</a></li>
+      <li><a href="personajes.html">Personajes</a></li>
+      <li><a href="galeria.html" class="active">Galeria</a></li>
+      <li><a href="curiosidades.html">Curiosidades</a></li>
+    </ul>
+
+    <button id="modo-toggle" class="btn btn-outline-warning ms-3" title="Cambiar modo">Modo</button>
+  </nav>
+
+  <main class="galeria-page">
+    <section class="hero-galeria">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <span class="hero-kicker">Coleccion visual</span>
+        <h1>Galeria</h1>
+        <p>Un recorrido visual por personajes, fondos y momentos del proyecto con la misma linea estetica del resto del sitio.</p>
+        <a href="#mosaico" class="btn-hero">Explorar imagenes</a>
+      </div>
+    </section>
+
+    <section class="panel-control container">
+      <div class="heading-wrap">
+        <span class="seccion-tag">Vista organizada</span>
+        <h2>Mosaico responsive</h2>
+        <p>La galeria mantiene las rutas actuales de imagenes y prioriza una lectura clara en escritorio, tablet y movil.</p>
+      </div>
+
+      <div class="filtros" role="toolbar" aria-label="Filtros de galeria">
+        <button class="filtro-btn active" data-filter="todos" type="button">Todos</button>
+        <button class="filtro-btn" data-filter="personajes" type="button">Personajes</button>
+        <button class="filtro-btn" data-filter="historia" type="button">Historia</button>
+        <button class="filtro-btn" data-filter="fondos" type="button">Fondos</button>
+      </div>
+    </section>
+
+    <section id="mosaico" class="mosaico-section container">
+      <article class="galeria-item item-wide" data-category="fondos">
+        <button class="galeria-card" type="button" data-image="images/fondos/IlustracionGrupal.jpg" data-title="Ilustracion grupal">
+          <img src="images/fondos/IlustracionGrupal.jpg" alt="Ilustracion grupal de Dragon Ball">
+          <span class="item-info">
+            <strong>Ilustracion grupal</strong>
+            <small>Fondos</small>
+          </span>
+        </button>
+      </article>
+
+      <article class="galeria-item" data-category="personajes">
+        <button class="galeria-card" type="button" data-image="images/personajes/goku/goku_base.png" data-title="Goku">
+          <img src="images/personajes/goku/goku_base.png" alt="Goku base">
+          <span class="item-info">
+            <strong>Goku</strong>
+            <small>Personajes</small>
+          </span>
+        </button>
+      </article>
+
+      <article class="galeria-item" data-category="personajes">
+        <button class="galeria-card" type="button" data-image="images/personajes/vegeta/vegeta.png" data-title="Vegeta">
+          <img src="images/personajes/vegeta/vegeta.png" alt="Vegeta">
+          <span class="item-info">
+            <strong>Vegeta</strong>
+            <small>Personajes</small>
+          </span>
+        </button>
+      </article>
+
+      <article class="galeria-item item-tall" data-category="personajes">
+        <button class="galeria-card" type="button" data-image="images/personajes/piccolo/piccolo.png" data-title="Piccolo">
+          <img src="images/personajes/piccolo/piccolo.png" alt="Piccolo">
+          <span class="item-info">
+            <strong>Piccolo</strong>
+            <small>Personajes</small>
+          </span>
+        </button>
+      </article>
+
+      <article class="galeria-item item-wide" data-category="historia">
+        <button class="galeria-card" type="button" data-image="images/historia/portada_saga/sagaSaiyan.png" data-title="Saga Saiyajin">
+          <img src="images/historia/portada_saga/sagaSaiyan.png" alt="Saga Saiyajin">
+          <span class="item-info">
+            <strong>Saga Saiyajin</strong>
+            <small>Historia</small>
+          </span>
+        </button>
+      </article>
+
+      <article class="galeria-item" data-category="historia">
+        <button class="galeria-card" type="button" data-image="images/historia/portada_saga/Saga_de_Frezer.jpg" data-title="Saga de Freezer">
+          <img src="images/historia/portada_saga/Saga_de_Frezer.jpg" alt="Saga de Freezer">
+          <span class="item-info">
+            <strong>Saga de Freezer</strong>
+            <small>Historia</small>
+          </span>
+        </button>
+      </article>
+
+      <article class="galeria-item" data-category="historia">
+        <button class="galeria-card" type="button" data-image="images/historia/portada_saga/Saga_de_Majin_Buu.png" data-title="Saga de Majin Buu">
+          <img src="images/historia/portada_saga/Saga_de_Majin_Buu.png" alt="Saga de Majin Buu">
+          <span class="item-info">
+            <strong>Saga de Majin Buu</strong>
+            <small>Historia</small>
+          </span>
+        </button>
+      </article>
+
+      <article class="galeria-item item-tall" data-category="fondos">
+        <button class="galeria-card" type="button" data-image="images/fondos/ilustracionGohan.jpg" data-title="Ilustracion de Gohan">
+          <img src="images/fondos/ilustracionGohan.jpg" alt="Ilustracion de Gohan">
+          <span class="item-info">
+            <strong>Ilustracion de Gohan</strong>
+            <small>Fondos</small>
+          </span>
+        </button>
+      </article>
+
+      <article class="galeria-item" data-category="personajes">
+        <button class="galeria-card" type="button" data-image="images/personajes/trunks/trunks_base.png" data-title="Trunks">
+          <img src="images/personajes/trunks/trunks_base.png" alt="Trunks base">
+          <span class="item-info">
+            <strong>Trunks</strong>
+            <small>Personajes</small>
+          </span>
+        </button>
+      </article>
+
+      <article class="galeria-item" data-category="personajes">
+        <button class="galeria-card" type="button" data-image="images/personajes/gohan/Adult_gohan.png" data-title="Gohan">
+          <img src="images/personajes/gohan/Adult_gohan.png" alt="Gohan adulto">
+          <span class="item-info">
+            <strong>Gohan</strong>
+            <small>Personajes</small>
+          </span>
+        </button>
+      </article>
+
+      <article class="galeria-item item-wide" data-category="fondos">
+        <button class="galeria-card" type="button" data-image="images/fondos/fondo3.jpg" data-title="Fondo del universo">
+          <img src="images/fondos/fondo3.jpg" alt="Fondo del universo Dragon Ball">
+          <span class="item-info">
+            <strong>Fondo del universo</strong>
+            <small>Fondos</small>
+          </span>
+        </button>
+      </article>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Cerrar visor">x</button>
+    <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+      <img id="lightbox-image" src="" alt="">
+      <p id="lightbox-title"></p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollToPlugin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.38/bundled/lenis.min.js"></script>
+
+  <script src="js/global.js"></script>
+  <script src="js/galeria.js"></script>
+</body>
+</html>
