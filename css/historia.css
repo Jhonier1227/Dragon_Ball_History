@@ -371,7 +371,7 @@ body.light-mode #modo-toggle {
 .timeline-item::before {
   content: none !important;
   position: absolute;
-  top: 46%;
+  top: 0%;
   width: 16px;
   height: 16px;
   border-radius: 50%;
