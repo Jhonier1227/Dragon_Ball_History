@@ -1,4 +1,135 @@
-﻿<!-- RESUMEN ARCHIVO: Plantilla base para la futura pagina de contacto. Actualmente solo referencia inclusion del header. -->
-<!-- AquÃ­ se incluye el header -->
-<!-- Copiar contenido de /partials/header.html -->
+<!DOCTYPE html>
+<!-- RESUMEN ARCHIVO: Pagina de contacto. Presenta informacion del creador, enlaces profesionales y nota de fuentes externas. -->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - Dragon Ball History</title>
+  <link rel="icon" href="images/logos/LogoZ.png" type="image/png">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/contacto.css">
+</head>
+<body>
+  <nav class="navbar navbar-contacto navbar-dark">
+    <div class="logo">
+      <img src="images/logos/LogoPri.png" alt="Logo Dragon Ball">
+    </div>
+
+    <div class="frase-dinamica-pro" id="frase-dinamica-pro"></div>
+
+    <div class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" role="button" tabindex="0">&#9776;</div>
+
+    <ul class="menu" id="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="historia.html">Historia</a></li>
+      <li><a href="personajes.html">Personajes</a></li>
+      <li><a href="galeria.html">Galeria</a></li>
+      <li><a href="curiosidades.html">Curiosidades</a></li>
+      <li><a href="contacto.html" class="active">Contacto</a></li>
+    </ul>
+
+    <button id="modo-toggle" class="btn btn-outline-warning ms-3" title="Cambiar modo">Modo</button>
+  </nav>
+
+  <main class="contacto-page">
+    <section class="hero-contacto">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <span class="hero-tag">Creador del proyecto</span>
+        <h1>Contacto</h1>
+        <p>Una pagina para conocer mas sobre mi trabajo, mi recorrido actual y los espacios donde puedes ver mis proyectos y contenido.</p>
+        <a href="#perfil" class="btn-hero">Conocer mas</a>
+      </div>
+    </section>
+
+    <section id="perfil" class="perfil-section container">
+      <article class="perfil-card perfil-principal">
+        <span class="perfil-badge">Sobre mi</span>
+        <h2>Jhonier Stiven Montano Castillo</h2>
+        <p>Actualmente trabajo en Carvajal Tecnologia y Servicios. Mi meta es convertirme en un gran desarrollador y participar en proyectos orientados a backend, inteligencia artificial y automatizacion de sistemas.</p>
+      </article>
+
+      <article class="perfil-card perfil-secundario">
+        <span class="perfil-badge">Vision</span>
+        <p>Estoy construyendo un camino profesional enfocado en seguir aprendiendo, crear proyectos solidos y ampliar mi alcance como desarrollador y creador de contenido.</p>
+      </article>
+    </section>
+
+    <section class="enlaces-section container">
+      <div class="section-heading">
+        <span class="section-tag">Mis espacios</span>
+        <h2>Redes y plataformas</h2>
+        <p>Aqui puedes encontrar mis perfiles profesionales, mi portafolio y los canales donde comparto contenido.</p>
+      </div>
+
+      <div class="contacto-grid">
+        <article class="contacto-card">
+          <span class="contacto-icono">GH</span>
+          <h3>GitHub</h3>
+          <p>Repositorio de proyectos, avances y codigo compartido.</p>
+          <a href="https://github.com/Jhonier1227/" target="_blank" rel="noopener noreferrer">Visitar GitHub</a>
+        </article>
+
+        <article class="contacto-card">
+          <span class="contacto-icono">IN</span>
+          <h3>LinkedIn</h3>
+          <p>Perfil profesional para conectar y seguir mi crecimiento laboral.</p>
+          <a href="https://linkedin.com/in/jhonier-stiven-montano-castillo-610271346" target="_blank" rel="noopener noreferrer">Ver LinkedIn</a>
+        </article>
+
+        <article class="contacto-card">
+          <span class="contacto-icono">PF</span>
+          <h3>Portafolio</h3>
+          <p>Proyectos, presentacion personal y experiencia mostrada en un solo lugar.</p>
+          <a href="https://jhonier1227.github.io/Portafolio/" target="_blank" rel="noopener noreferrer">Abrir portafolio</a>
+        </article>
+
+        <article class="contacto-card">
+          <span class="contacto-icono">YT</span>
+          <h3>YouTube</h3>
+          <p>Contenido sobre perseverancia, desarrollo y proceso de aprendizaje.</p>
+          <a href="https://youtube.com/@jmdevperseverante?si=MclJhcfwwTChPoqm" target="_blank" rel="noopener noreferrer">Ir a YouTube</a>
+        </article>
+
+        <article class="contacto-card">
+          <span class="contacto-icono">TT</span>
+          <h3>TikTok</h3>
+          <p>Espacio para compartir contenido corto relacionado con software y crecimiento.</p>
+          <a href="https://www.tiktok.com/@jhonisoftware?_r=1&_t=ZS-95Crf9ib0S7" target="_blank" rel="noopener noreferrer">Ir a TikTok</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-contacto">
+      <div class="container cta-box">
+        <span class="section-tag">Cierre</span>
+        <h2>Gracias por visitar Dragon Ball History</h2>
+        <p>Este proyecto tambien representa una parte de mi camino como desarrollador. Si quieres conocer mi trabajo o seguir mi contenido, puedes encontrarme en las plataformas anteriores.</p>
+      </div>
+    </section>
+
+    <section class="creditos-section container">
+      <div class="creditos-card">
+        <h3>Nota importante</h3>
+        <p>Parte de las imagenes y de la informacion usada en este proyecto provienen de autores y fuentes externas. Todos los derechos pertenecen a sus respectivos propietarios.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollToPlugin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.38/bundled/lenis.min.js"></script>
+
+  <script src="js/global.js"></script>
+  <script src="js/contacto.js"></script>
+</body>
+</html>
