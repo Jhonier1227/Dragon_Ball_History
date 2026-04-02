@@ -1,1 +1,390 @@
-﻿/* RESUMEN ARCHIVO: Hoja reservada para estilos de contacto. Pendiente de implementacion. */
+/* RESUMEN ARCHIVO: Estilos de la pagina contacto (navbar, hero, tarjetas de perfil y enlaces). */
+:root {
+  --db-black: #050505;
+  --db-white: #fff;
+  --db-orange: #ffa500;
+  --db-orange-soft: #ffd27a;
+  --db-orange-strong: #c96c00;
+  --db-panel: rgba(15, 15, 15, 0.88);
+}
+
+body {
+  background:
+    radial-gradient(circle at 8% 12%, rgba(255, 165, 0, 0.14), transparent 28%),
+    radial-gradient(circle at 90% 16%, rgba(255, 165, 0, 0.08), transparent 22%),
+    linear-gradient(180deg, #030303 0%, #0c0c0c 100%);
+  color: var(--db-white);
+}
+
+body.light-mode {
+  background:
+    radial-gradient(circle at 8% 12%, rgba(255, 165, 0, 0.12), transparent 32%),
+    linear-gradient(180deg, #fbf6ea 0%, #f4f4f4 100%);
+  color: #111;
+}
+
+.navbar-contacto {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 165, 0, 0.3);
+  box-shadow: 0 10px 24px rgba(255, 165, 0, 0.14);
+  padding: 14px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+body.light-mode .navbar-contacto {
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.navbar-contacto .logo img {
+  height: 64px;
+  filter: drop-shadow(0 0 5px var(--db-orange));
+}
+
+.navbar-contacto .frase-dinamica-pro {
+  flex: 1;
+  text-align: center;
+  color: var(--db-orange);
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 0 12px;
+}
+
+body.light-mode .navbar-contacto .frase-dinamica-pro {
+  color: var(--db-orange-strong);
+}
+
+.navbar-contacto .menu {
+  display: flex;
+  list-style: none;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-contacto .menu a {
+  color: #f7f7f7;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 9px 12px;
+  border-radius: 10px;
+  transition: color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+body.light-mode .navbar-contacto .menu a {
+  color: #1f1f1f;
+}
+
+.navbar-contacto .menu a:hover,
+.navbar-contacto .menu a.active {
+  color: var(--db-orange);
+  background: rgba(255, 165, 0, 0.14);
+  transform: translateY(-1px);
+}
+
+.navbar-contacto .menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: var(--db-orange);
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 165, 0, 0.45);
+}
+
+.hero-contacto {
+  position: relative;
+  min-height: 82vh;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(120deg, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.45)),
+    url("../images/fondos/fondo3.jpg") center/cover no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top, rgba(255, 165, 0, 0.16), transparent 24%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.55));
+}
+
+.hero-content,
+.perfil-section,
+.enlaces-section,
+.cta-box,
+.creditos-section {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  padding-top: 120px;
+  padding-bottom: 90px;
+}
+
+.hero-tag,
+.section-tag,
+.perfil-badge {
+  display: inline-block;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--db-orange-soft);
+}
+
+.hero-content h1,
+.section-heading h2,
+.cta-box h2,
+.perfil-card h2 {
+  font-family: "Luckiest Guy", cursive;
+}
+
+.hero-content h1 {
+  font-size: clamp(3rem, 8vw, 5rem);
+  color: var(--db-orange);
+  margin: 16px 0 14px;
+}
+
+.hero-content p {
+  max-width: 650px;
+  line-height: 1.75;
+  font-size: clamp(1rem, 2vw, 1.16rem);
+}
+
+.btn-hero {
+  display: inline-flex;
+  margin-top: 24px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--db-orange), #ffcf4f);
+  color: #111;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 14px 28px rgba(255, 165, 0, 0.24);
+}
+
+.perfil-section {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 24px;
+  margin-top: -56px;
+}
+
+.perfil-card,
+.contacto-card,
+.cta-box,
+.creditos-card {
+  border-radius: 28px;
+  border: 1px solid rgba(255, 165, 0, 0.2);
+  background: var(--db-panel);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.3);
+}
+
+.perfil-card {
+  padding: 30px;
+}
+
+.perfil-card h2 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: var(--db-orange);
+  margin: 14px 0;
+}
+
+.perfil-card p {
+  line-height: 1.8;
+  margin: 0;
+}
+
+.enlaces-section {
+  padding-top: 90px;
+  padding-bottom: 36px;
+}
+
+.section-heading {
+  max-width: 720px;
+  margin-bottom: 30px;
+}
+
+.section-heading h2 {
+  margin: 12px 0 10px;
+  font-size: clamp(2.1rem, 5vw, 3.5rem);
+  color: var(--db-orange);
+}
+
+.section-heading p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.75;
+}
+
+body.light-mode .section-heading p {
+  color: rgba(17, 17, 17, 0.72);
+}
+
+.contacto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+}
+
+.contacto-card {
+  padding: 26px;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.contacto-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 165, 0, 0.46);
+  box-shadow: 0 22px 38px rgba(0, 0, 0, 0.34);
+}
+
+.contacto-icono {
+  display: inline-grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  background: rgba(255, 165, 0, 0.12);
+  border: 1px solid rgba(255, 165, 0, 0.24);
+  color: var(--db-orange);
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.contacto-card h3 {
+  color: var(--db-orange);
+  margin-bottom: 10px;
+}
+
+.contacto-card p {
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.82);
+  min-height: 84px;
+}
+
+body.light-mode .contacto-card p {
+  color: rgba(17, 17, 17, 0.75);
+}
+
+.contacto-card a {
+  display: inline-flex;
+  margin-top: 8px;
+  color: #111;
+  background: linear-gradient(135deg, var(--db-orange), #ffd35e);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: 999px;
+}
+
+.cta-contacto {
+  padding: 40px 0;
+}
+
+.cta-box {
+  padding: 34px;
+}
+
+.cta-box h2 {
+  color: var(--db-orange);
+  margin: 14px 0 12px;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.cta-box p {
+  line-height: 1.8;
+  margin: 0;
+}
+
+.creditos-section {
+  padding-bottom: 90px;
+}
+
+.creditos-card {
+  padding: 28px;
+}
+
+.creditos-card h3 {
+  color: var(--db-orange);
+  margin-bottom: 12px;
+}
+
+.creditos-card p {
+  line-height: 1.75;
+  margin: 0;
+}
+
+body.light-mode .perfil-card,
+body.light-mode .contacto-card,
+body.light-mode .cta-box,
+body.light-mode .creditos-card {
+  background: rgba(255, 255, 255, 0.94);
+}
+
+@media (max-width: 991px) {
+  .navbar-contacto {
+    flex-wrap: wrap;
+    padding: 12px 16px;
+  }
+
+  .navbar-contacto .menu-toggle {
+    display: block;
+  }
+
+  .navbar-contacto .menu {
+    display: none;
+    width: 100%;
+    margin-top: 8px;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.92);
+    border-radius: 14px;
+    border: 1px solid rgba(255, 165, 0, 0.24);
+    padding: 12px;
+  }
+
+  .navbar-contacto .menu.show {
+    display: flex;
+  }
+
+  body.light-mode .navbar-contacto .menu {
+    background: rgba(255, 255, 255, 0.98);
+  }
+
+  .navbar-contacto .frase-dinamica-pro {
+    width: 100%;
+    order: 3;
+    margin-top: 4px;
+    text-align: left;
+  }
+
+  .perfil-section {
+    grid-template-columns: 1fr;
+    margin-top: -36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-contacto {
+    min-height: 72vh;
+  }
+
+  .hero-content {
+    padding-top: 100px;
+    padding-bottom: 70px;
+  }
+
+  .perfil-card,
+  .contacto-card,
+  .cta-box,
+  .creditos-card {
+    padding: 22px;
+    border-radius: 24px;
+  }
+}
