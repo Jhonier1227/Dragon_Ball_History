@@ -490,6 +490,106 @@ body.light-mode #modo-toggle {
   left: -80px;
 }
 
+.saga-highlight {
+  position: absolute;
+  top: 50%;
+  width: 400px;
+  height: 250px;
+  padding: 0;
+  border: 0;
+  border-radius: 24px;
+  background: transparent;
+  box-shadow: none;
+  transform: translateY(-50%) rotate(-4deg);
+  z-index: 2;
+  overflow: hidden;
+  perspective: 1200px;
+  cursor: pointer;
+}
+
+.saga-highlight-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease;
+}
+
+.saga-highlight.is-flipped .saga-highlight-inner {
+  transform: rotateY(180deg);
+}
+
+.saga-highlight-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+  border: 1px solid rgba(255, 165, 0, 0.22);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.32);
+  background: linear-gradient(180deg, rgba(20, 20, 20, 0.94), rgba(0, 0, 0, 0.98));
+}
+
+.saga-highlight-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.saga-highlight-back {
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  padding: 22px;
+  text-align: left;
+  transform: rotateY(180deg);
+}
+
+.saga-highlight-label {
+  display: inline-flex;
+  align-self: flex-start;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-naranja-suave);
+}
+
+.saga-highlight-back strong {
+  color: var(--color-naranja);
+  font-size: 1.15rem;
+  line-height: 1.4;
+}
+
+.saga-highlight-back p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.86);
+  line-height: 1.65;
+  font-size: 0.95rem;
+}
+
+.right-highlight {
+  left: calc(100% + 120px);
+}
+
+body.light-mode .saga-highlight {
+  background: transparent;
+}
+
+body.light-mode .saga-highlight-face {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(201, 108, 0, 0.22);
+}
+
+body.light-mode .saga-highlight-back p {
+  color: #2f2f2f;
+}
+
 .btn-ver {
   display: inline-flex;
   align-items: center;
@@ -551,6 +651,15 @@ body.light-mode .logo-saga {
 
   .left-logo {
     left: -68px;
+  }
+
+  .saga-highlight {
+    width: 340px;
+    height: 220px;
+  }
+
+  .right-highlight {
+    left: calc(100% + 92px);
   }
 }
 
@@ -672,5 +781,18 @@ body.light-mode .logo-saga {
 
   .timeline-item .content {
     order: 2;
+  }
+
+  .saga-highlight,
+  .right-highlight {
+    position: relative;
+    order: 3;
+    top: auto;
+    left: auto;
+    right: auto;
+    width: min(360px, 100%);
+    height: 220px;
+    margin: 12px 0 0;
+    transform: none;
   }
 }

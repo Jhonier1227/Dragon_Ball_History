@@ -201,6 +201,8 @@ body.light-mode .navbar-curiosidades .menu a {
   max-width: 640px;
   font-size: clamp(1rem, 2vw, 1.2rem);
   line-height: 1.7;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
 }
 
 .btn-hero {
