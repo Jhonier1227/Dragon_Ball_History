@@ -157,6 +157,8 @@ body.light-mode .navbar-contacto .menu a {
   max-width: 650px;
   line-height: 1.75;
   font-size: clamp(1rem, 2vw, 1.16rem);
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
 }
 
 .btn-hero {

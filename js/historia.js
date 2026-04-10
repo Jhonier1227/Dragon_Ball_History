@@ -94,6 +94,28 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
+
+  const destacados = document.querySelectorAll(".saga-highlight");
+  destacados.forEach((destacado) => {
+    destacado.addEventListener("click", () => {
+      destacado.classList.toggle("is-flipped");
+    });
+
+    destacado.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        destacado.classList.toggle("is-flipped");
+      }
+    });
+
+    gsap.to(destacado, {
+      y: -10,
+      duration: 2.8,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut"
+    });
+  });
 });
 
 // GSAP Timeline - Animaciones de entrada por tarjeta con ScrollTrigger
@@ -136,4 +158,19 @@ gsap.from(".intro-saga img", {
     start: "top 80%",
     toggleActions: "play none none none"
   }
+});
+
+gsap.utils.toArray(".saga-highlight").forEach((item) => {
+  gsap.from(item, {
+    opacity: 0,
+    x: 90,
+    rotate: -8,
+    duration: 1,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: item,
+      start: "top 82%",
+      toggleActions: "play none none none"
+    }
+  });
 });
