@@ -79,6 +79,8 @@ Ejemplo:
 - No repetir imágenes dentro de una misma saga.
 - Priorizar imágenes del anime, manga, capturas oficiales o recursos claramente no generados con IA.
 - Evitar imágenes con apariencia artificial o generadas por IA.
+- Desde la saga de los Androides y Cell en adelante, las imágenes deben obtenerse únicamente desde `https://dragonball.fandom.com/wiki/Main_Page` y sus archivos oficiales asociados.
+- Las imágenes deben ajustarse correctamente al espacio visual correspondiente, manteniendo buen recorte, proporción y legibilidad.
 - Si una imagen no representa bien la escena, debe reemplazarse.
 - Las rutas visuales deben quedar registradas en `js/historia-imagenes.json`.
 
@@ -175,3 +177,5 @@ Por lo tanto:
 3. Hacer cambios sin romper lo anterior
 4. Mantener consistencia visual y organizativa
 5. Escalar el proyecto de forma limpia y sostenible
+6. Utlizar unicamente estas dos rutas para sacar información: "- https://es.dragon-ball-official.com/, https://dragonball.fandom.com/wiki/Main_Page
+"
