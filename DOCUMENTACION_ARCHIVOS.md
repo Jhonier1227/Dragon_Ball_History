@@ -165,3 +165,4 @@ En cada archivo fuente se agrego un encabezado `RESUMEN ARCHIVO` para que cualqu
   - Que salida/efecto produce
   - Que dependencias externas usa
 - Si una pagina usa libreria por CDN, evitar placeholders vacios locales para no generar confusion.
+

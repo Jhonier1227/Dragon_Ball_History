@@ -471,12 +471,15 @@ body.historia-layout {
 .historia-story-media img {
   display: block;
   width: 100%;
-  min-height: 240px;
-  max-height: 340px;
+  aspect-ratio: 16 / 10;
+  min-height: 0;
+  max-height: none;
   object-fit: cover;
+  object-position: center;
   border-radius: 22px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: var(--historia-shadow);
+  background: #030406;
 }
 
 .historia-story-media figcaption {
