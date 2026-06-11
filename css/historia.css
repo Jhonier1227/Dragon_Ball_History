@@ -577,6 +577,10 @@ body.light-mode #modo-toggle {
   left: calc(100% + 120px);
 }
 
+.left-highlight {
+  right: calc(100% + 120px);
+}
+
 body.light-mode .saga-highlight {
   background: transparent;
 }
@@ -660,6 +664,10 @@ body.light-mode .logo-saga {
 
   .right-highlight {
     left: calc(100% + 92px);
+  }
+
+  .left-highlight {
+    right: calc(100% + 92px);
   }
 }
 
@@ -784,6 +792,7 @@ body.light-mode .logo-saga {
   }
 
   .saga-highlight,
+  .left-highlight,
   .right-highlight {
     position: relative;
     order: 3;
