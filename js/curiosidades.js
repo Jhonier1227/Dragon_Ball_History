@@ -1,4 +1,4 @@
-/* RESUMEN ARCHIVO: Logica de la pagina curiosidades (menu movil, frase dinamica y animaciones suaves). */
+/* RESUMEN ARCHIVO: Logica de la pagina curiosidades (JSON, menu movil, frase dinamica y animaciones suaves). */
 document.addEventListener("DOMContentLoaded", () => {
   const frases = [
     "Descubre detalles que hacen unico al universo Dragon Ball",
@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const fraseContainer = document.getElementById("frase-dinamica-pro");
   const btnHero = document.querySelector(".btn-hero");
   const orbs = document.querySelectorAll(".orb");
+  const grid = document.getElementById("curiosidades-grid");
+  const estadoCuriosidades = document.getElementById("estado-curiosidades");
   let fraseIndex = 0;
   let charIndex = 0;
 
@@ -50,9 +52,47 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  if (fraseContainer) {
-    fraseContainer.textContent = "";
-    escribirFrase();
+  function crearCuriosidad(item, index) {
+    const article = document.createElement("article");
+    article.className = "curiosidad-card";
+    article.dataset.categoria = item.categoria;
+
+    article.innerHTML = `
+      <div class="curiosidad-media">
+        <img src="${item.imagen}" alt="${item.titulo}" loading="lazy">
+        <span class="curiosidad-num">${String(index + 1).padStart(2, "0")}</span>
+      </div>
+      <div class="curiosidad-copy">
+        <span class="card-badge">${item.categoria}</span>
+        <h3>${item.titulo}</h3>
+        <p>${item.texto}</p>
+        <small>${item.fuente}</small>
+      </div>
+    `;
+
+    return article;
+  }
+
+  async function cargarCuriosidades() {
+    if (!grid) return;
+
+    try {
+      const response = await fetch("js/curiosidades.json");
+      if (!response.ok) throw new Error("No se pudo cargar curiosidades.json");
+      const data = await response.json();
+      const fragmento = document.createDocumentFragment();
+
+      data.forEach((item, index) => {
+        fragmento.appendChild(crearCuriosidad(item, index));
+      });
+
+      grid.innerHTML = "";
+      grid.appendChild(fragmento);
+      activarAnimacionTarjetas();
+    } catch (error) {
+      console.error("Error cargando curiosidades:", error);
+      if (estadoCuriosidades) estadoCuriosidades.hidden = false;
+    }
   }
 
   btnHero?.addEventListener("click", (event) => {
@@ -63,6 +103,27 @@ document.addEventListener("DOMContentLoaded", () => {
       ease: "power2.out"
     });
   });
+
+  if (fraseContainer) {
+    fraseContainer.textContent = "";
+    escribirFrase();
+  }
+
+  function activarAnimacionTarjetas() {
+    if (typeof gsap === "undefined") return;
+
+    gsap.from(".curiosidad-card", {
+      scrollTrigger: {
+        trigger: ".curiosidades-grid",
+        start: "top 82%"
+      },
+      opacity: 0,
+      y: 70,
+      duration: 0.9,
+      stagger: 0.08,
+      ease: "power2.out"
+    });
+  }
 
   if (typeof gsap !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
@@ -87,18 +148,6 @@ document.addEventListener("DOMContentLoaded", () => {
       ease: "power2.out"
     });
 
-    gsap.from(".curiosidad-card", {
-      scrollTrigger: {
-        trigger: ".curiosidades-grid",
-        start: "top 82%"
-      },
-      opacity: 0,
-      y: 70,
-      duration: 0.9,
-      stagger: 0.15,
-      ease: "power2.out"
-    });
-
     gsap.from(".micro-card", {
       scrollTrigger: {
         trigger: ".micro-datos",
@@ -108,6 +157,17 @@ document.addEventListener("DOMContentLoaded", () => {
       y: 45,
       duration: 0.8,
       stagger: 0.12,
+      ease: "power2.out"
+    });
+
+    gsap.from(".fuentes-panel", {
+      scrollTrigger: {
+        trigger: ".fuentes-oficiales",
+        start: "top 88%"
+      },
+      opacity: 0,
+      y: 45,
+      duration: 0.8,
       ease: "power2.out"
     });
 
@@ -136,4 +196,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     requestAnimationFrame(raf);
   }
+
+  cargarCuriosidades();
 });

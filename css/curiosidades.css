@@ -296,14 +296,13 @@ body.light-mode .seccion-heading p {
 
 .curiosidades-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
 }
 
 .curiosidad-card {
   position: relative;
-  padding: 28px;
-  min-height: 280px;
+  min-height: 100%;
   overflow: hidden;
   transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
 }
@@ -325,27 +324,59 @@ body.light-mode .seccion-heading p {
   box-shadow: 0 26px 40px rgba(0, 0, 0, 0.38);
 }
 
-.icono-wrap {
-  width: 82px;
-  height: 82px;
-  display: grid;
-  place-items: center;
-  border-radius: 20px;
-  margin-bottom: 18px;
-  background: rgba(255, 165, 0, 0.1);
-  border: 1px solid rgba(255, 165, 0, 0.2);
+.curiosidad-media {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(255, 165, 0, 0.18), transparent 46%),
+    rgba(0, 0, 0, 0.72);
 }
 
-.icono-wrap img {
-  width: 52px;
-  height: 52px;
-  object-fit: contain;
+.curiosidad-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.curiosidad-card:hover .curiosidad-media img {
+  transform: scale(1.06);
+}
+
+.curiosidad-num {
+  position: absolute;
+  right: 14px;
+  bottom: 12px;
+  font-family: "Luckiest Guy", cursive;
+  font-size: 2.1rem;
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.65);
+}
+
+.curiosidad-copy {
+  padding: 22px;
+}
+
+.curiosidad-copy h3 {
+  margin: 12px 0 10px;
+  color: var(--db-orange);
+  font-size: 1.18rem;
+  font-weight: 800;
 }
 
 .curiosidad-card p {
-  margin-top: 14px;
-  font-size: 1.05rem;
-  line-height: 1.7;
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.curiosidad-copy small {
+  display: inline-flex;
+  margin-top: 16px;
+  color: rgba(255, 255, 255, 0.62);
+  font-weight: 700;
 }
 
 .curiosidad-feature {
@@ -426,6 +457,70 @@ body.light-mode .feature-panel-inner {
   background: rgba(255, 255, 255, 0.84);
 }
 
+body.light-mode .curiosidad-copy small {
+  color: rgba(17, 17, 17, 0.58);
+}
+
+.estado-curiosidades {
+  margin-top: 18px;
+  color: var(--db-orange-soft);
+  font-weight: 700;
+}
+
+.fuentes-oficiales {
+  padding-bottom: 100px;
+}
+
+.fuentes-panel {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--db-border);
+  border-radius: 30px;
+  padding: 34px;
+  background:
+    linear-gradient(135deg, rgba(255, 165, 0, 0.15), transparent 42%),
+    rgba(18, 18, 18, 0.88);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
+}
+
+.fuentes-panel h2 {
+  margin: 12px 0;
+  color: var(--db-orange);
+  font-family: "Luckiest Guy", cursive;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.fuentes-panel p {
+  max-width: 760px;
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+
+.fuentes-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.fuentes-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--db-orange), #ffcc3a);
+  color: #111;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 14px 28px rgba(255, 165, 0, 0.2);
+}
+
+body.light-mode .fuentes-panel {
+  background:
+    linear-gradient(135deg, rgba(255, 165, 0, 0.16), transparent 42%),
+    rgba(255, 255, 255, 0.9);
+}
+
 @media (max-width: 991px) {
   .navbar-curiosidades {
     flex-wrap: wrap;
@@ -463,10 +558,13 @@ body.light-mode .feature-panel-inner {
   }
 
   .panel-resumen,
-  .curiosidades-grid,
   .feature-grid,
   .micro-datos {
     grid-template-columns: 1fr;
+  }
+
+  .curiosidades-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .panel-resumen {
@@ -487,7 +585,16 @@ body.light-mode .feature-panel-inner {
   .resumen-card,
   .curiosidad-card,
   .micro-card {
+    padding: 0;
+  }
+
+  .resumen-card,
+  .micro-card {
     padding: 22px;
+  }
+
+  .curiosidades-grid {
+    grid-template-columns: 1fr;
   }
 
   .feature-copy {
@@ -506,5 +613,9 @@ body.light-mode .feature-panel-inner {
   .orb-2 {
     width: 84px;
     height: 84px;
+  }
+
+  .fuentes-panel {
+    padding: 24px;
   }
 }

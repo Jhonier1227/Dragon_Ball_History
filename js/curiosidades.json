@@ -1,0 +1,194 @@
+[
+  {
+    "id": "manga-1984",
+    "categoria": "Origen",
+    "titulo": "Inicio del manga",
+    "texto": "Dragon Ball comenzo su publicacion en 1984 y desde ahi crecio como una de las historias mas reconocidas del manga japones.",
+    "imagen": "images/logos/LogoZ.png",
+    "fuente": "Sitio oficial Dragon Ball"
+  },
+  {
+    "id": "anime-1986",
+    "categoria": "Anime",
+    "titulo": "Salto a la television",
+    "texto": "La primera adaptacion animada de Dragon Ball inicio en 1986, llevando la aventura de Goku a una audiencia mucho mas amplia.",
+    "imagen": "images/fondos/IlustracionGrupal.jpg",
+    "fuente": "Sitio oficial Dragon Ball"
+  },
+  {
+    "id": "dragon-ball-z-1989",
+    "categoria": "Anime",
+    "titulo": "La era de Dragon Ball Z",
+    "texto": "Dragon Ball Z comenzo en 1989 y amplio la escala de los combates con amenazas espaciales, transformaciones y sagas mas extensas.",
+    "imagen": "images/historia/Dragon_Ball_Z_Logo_A.png",
+    "fuente": "Sitio oficial Dragon Ball"
+  },
+  {
+    "id": "pelicula-1986",
+    "categoria": "Cine",
+    "titulo": "Primeras peliculas",
+    "texto": "Las peliculas llegaron muy temprano en la historia de la franquicia, ayudando a expandir sus aventuras fuera de la serie semanal.",
+    "imagen": "images/historia/portada_saga/Saga_EmperadorPilaf.png",
+    "fuente": "Sitio oficial Dragon Ball"
+  },
+  {
+    "id": "gt-1996",
+    "categoria": "Anime",
+    "titulo": "Dragon Ball GT",
+    "texto": "Dragon Ball GT inicio en 1996 y propuso una nueva aventura con viajes por el espacio y una energia visual distinta.",
+    "imagen": "images/fondos/fondo3.jpg",
+    "fuente": "Sitio oficial Dragon Ball"
+  },
+  {
+    "id": "kai-2009",
+    "categoria": "Anime",
+    "titulo": "Dragon Ball Z Kai",
+    "texto": "Dragon Ball Z Kai llego en 2009 como una version renovada de la historia de Dragon Ball Z para nuevas generaciones.",
+    "imagen": "images/historia/portada_saga/sagaSaiyan.png",
+    "fuente": "Sitio oficial Dragon Ball"
+  },
+  {
+    "id": "battle-of-gods",
+    "categoria": "Cine",
+    "titulo": "La Batalla de los Dioses",
+    "texto": "La pelicula Battle of Gods marco una etapa moderna para la franquicia y reintrodujo a Dragon Ball en una escala divina.",
+    "imagen": "images/personajes/goku/goku_ssj.png",
+    "fuente": "Sitio oficial Dragon Ball"
+  },
+  {
+    "id": "resurrection-f",
+    "categoria": "Cine",
+    "titulo": "El regreso de Freezer",
+    "texto": "Resurrection F recupero a uno de los villanos mas famosos de la franquicia y reforzo el peso de Freezer en la historia.",
+    "imagen": "images/historia/portada_saga/Saga_de_Frezer.jpg",
+    "fuente": "Sitio oficial Dragon Ball"
+  },
+  {
+    "id": "super-2015",
+    "categoria": "Anime",
+    "titulo": "Dragon Ball Super",
+    "texto": "Dragon Ball Super empezo en 2015 y llevo la historia hacia torneos, universos paralelos y enemigos de escala superior.",
+    "imagen": "images/logos/LogoShenron.png",
+    "fuente": "Sitio oficial Dragon Ball"
+  },
+  {
+    "id": "super-manga",
+    "categoria": "Manga",
+    "titulo": "Manga de Dragon Ball Super",
+    "texto": "El manga de Dragon Ball Super tambien inicio en 2015, ampliando la continuidad moderna con nuevas batallas y arcos.",
+    "imagen": "images/personajes/vegeta/vegeta_ssj.png",
+    "fuente": "Sitio oficial Dragon Ball"
+  },
+  {
+    "id": "broly-2018",
+    "categoria": "Cine",
+    "titulo": "Broly moderno",
+    "texto": "Dragon Ball Super: Broly llego en 2018 y presento una version moderna del legendario Saiyajin.",
+    "imagen": "images/personajes/goku/goku_ssj_3.png",
+    "fuente": "Sitio oficial Dragon Ball"
+  },
+  {
+    "id": "super-hero-2022",
+    "categoria": "Cine",
+    "titulo": "Super Hero",
+    "texto": "Dragon Ball Super: Super Hero se estreno en 2022 y puso el foco en personajes como Gohan y Piccolo.",
+    "imagen": "images/personajes/gohan/Adult_gohan.png",
+    "fuente": "Sitio oficial Dragon Ball"
+  },
+  {
+    "id": "daima-2024",
+    "categoria": "Anime",
+    "titulo": "Dragon Ball DAIMA",
+    "texto": "Dragon Ball DAIMA llego en 2024 como una nueva propuesta animada dentro del universo de Dragon Ball.",
+    "imagen": "images/personajes/personajes_inicio/goku.png",
+    "fuente": "Sitio oficial Dragon Ball"
+  },
+  {
+    "id": "shenron",
+    "categoria": "Esferas",
+    "titulo": "El deseo como motor",
+    "texto": "Las Esferas del Dragon funcionan como punto de partida para muchas aventuras: buscar, reunir y pedir un deseo.",
+    "imagen": "images/logos/LogoShenron.png",
+    "fuente": "Sitio oficial Dragon Ball"
+  },
+  {
+    "id": "kamehameha",
+    "categoria": "Tecnicas",
+    "titulo": "Tecnica iconica",
+    "texto": "El Kamehameha se convirtio en una de las tecnicas mas reconocibles del anime y del manga a nivel mundial.",
+    "imagen": "images/logos/IconKame.png",
+    "fuente": "Sitio oficial Dragon Ball"
+  },
+  {
+    "id": "saiyajin",
+    "categoria": "Saiyajin",
+    "titulo": "Orgullo Saiyajin",
+    "texto": "Los Saiyajin son centrales en Dragon Ball Z: su origen, rivalidad y capacidad de superacion impulsan varias sagas.",
+    "imagen": "images/logos/PeloVegeta.png",
+    "fuente": "Sitio oficial Dragon Ball"
+  },
+  {
+    "id": "red-ribbon",
+    "categoria": "Historia",
+    "titulo": "Red Ribbon",
+    "texto": "El Ejercito Red Ribbon conecta etapas muy distintas de la franquicia, desde la aventura clasica hasta amenazas tecnologicas.",
+    "imagen": "images/historia/portada_saga/Saga_del_Ejercito_Red_Ribbon.png",
+    "fuente": "Sitio oficial Dragon Ball"
+  },
+  {
+    "id": "androides",
+    "categoria": "Historia",
+    "titulo": "Androides y Cell",
+    "texto": "La saga de Androides y Cell mezcla ciencia, viajes temporales y una amenaza que busca alcanzar la perfeccion.",
+    "imagen": "images/historia/portada_saga/Saga_de_los_androides_y_cell.jpg",
+    "fuente": "Sitio oficial Dragon Ball"
+  },
+  {
+    "id": "majin-buu",
+    "categoria": "Historia",
+    "titulo": "Majin Buu",
+    "texto": "La saga de Majin Buu combina peligro, humor y redencion, manteniendo el contraste clasico de Dragon Ball.",
+    "imagen": "images/historia/portada_saga/Saga_de_Majin_Buu.png",
+    "fuente": "Sitio oficial Dragon Ball"
+  },
+  {
+    "id": "torneos",
+    "categoria": "Torneos",
+    "titulo": "Torneos memorables",
+    "texto": "Los torneos de artes marciales son una base importante de Dragon Ball: muestran crecimiento, rivalidad y disciplina.",
+    "imagen": "images/historia/portada_saga/Saga21TorneoArte.png",
+    "fuente": "Sitio oficial Dragon Ball"
+  },
+  {
+    "id": "piccolo",
+    "categoria": "Personajes",
+    "titulo": "Piccolo y el cambio",
+    "texto": "Piccolo es uno de los mejores ejemplos de evolucion: de enemigo a aliado, mentor y protector.",
+    "imagen": "images/personajes/piccolo/piccolo.png",
+    "fuente": "Sitio oficial Dragon Ball"
+  },
+  {
+    "id": "gohan",
+    "categoria": "Personajes",
+    "titulo": "El potencial de Gohan",
+    "texto": "Gohan representa el poder oculto y la responsabilidad: su crecimiento suele aparecer en momentos decisivos.",
+    "imagen": "images/personajes/gohan/Adult_gohan_ssj_2.png",
+    "fuente": "Sitio oficial Dragon Ball"
+  },
+  {
+    "id": "sitio-oficial",
+    "categoria": "Comunidad",
+    "titulo": "Noticias oficiales",
+    "texto": "El sitio oficial publica novedades, columnas, entrevistas y contenido para fans de Dragon Ball alrededor del mundo.",
+    "imagen": "images/fondos/ilustracionGohan.jpg",
+    "fuente": "Sitio oficial Dragon Ball"
+  },
+  {
+    "id": "fans-globales",
+    "categoria": "Comunidad",
+    "titulo": "Alcance mundial",
+    "texto": "Dragon Ball se mantiene vigente por su comunidad global, que sigue compartiendo personajes, sagas y momentos favoritos.",
+    "imagen": "images/fondos/fondo_home.jpg",
+    "fuente": "Sitio oficial Dragon Ball"
+  }
+]

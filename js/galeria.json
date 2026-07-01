@@ -1,0 +1,135 @@
+[
+  {
+    "id": "ilustracion-grupal",
+    "titulo": "Ilustracion grupal",
+    "categoria": "fondos",
+    "imagen": "images/fondos/IlustracionGrupal.jpg",
+    "alt": "Ilustracion grupal de Dragon Ball",
+    "layout": "wide"
+  },
+  {
+    "id": "goku-base",
+    "titulo": "Goku",
+    "categoria": "personajes",
+    "imagen": "images/personajes/goku/goku_base.png",
+    "alt": "Goku base"
+  },
+  {
+    "id": "vegeta",
+    "titulo": "Vegeta",
+    "categoria": "personajes",
+    "imagen": "images/personajes/vegeta/vegeta.png",
+    "alt": "Vegeta"
+  },
+  {
+    "id": "piccolo",
+    "titulo": "Piccolo",
+    "categoria": "personajes",
+    "imagen": "images/personajes/piccolo/piccolo.png",
+    "alt": "Piccolo",
+    "layout": "tall"
+  },
+  {
+    "id": "saga-saiyajin",
+    "titulo": "Saga Saiyajin",
+    "categoria": "historia",
+    "imagen": "images/historia/portada_saga/sagaSaiyan.png",
+    "alt": "Saga Saiyajin",
+    "layout": "wide"
+  },
+  {
+    "id": "saga-freezer",
+    "titulo": "Saga de Freezer",
+    "categoria": "historia",
+    "imagen": "images/historia/portada_saga/Saga_de_Frezer.jpg",
+    "alt": "Saga de Freezer"
+  },
+  {
+    "id": "saga-cell",
+    "titulo": "Saga de Cell",
+    "categoria": "historia",
+    "imagen": "images/historia/portada_saga/Saga_de_los_androides_y_cell.jpg",
+    "alt": "Saga de Cell"
+  },
+  {
+    "id": "saga-uranai-baba",
+    "titulo": "Saga de Uranai Baba",
+    "categoria": "historia",
+    "imagen": "images/historia/portada_saga/SagaUranai_Baba.png",
+    "alt": "Saga de Uranai Baba",
+    "layout": "tall"
+  },
+  {
+    "id": "saga-piccolo-daimao",
+    "titulo": "Saga de Piccolo Daimao",
+    "categoria": "historia",
+    "imagen": "images/historia/portada_saga/SagaPiccoloDaimaku.png",
+    "alt": "Saga de Piccolo Daimao",
+    "layout": "wide"
+  },
+  {
+    "id": "saga-pilaf",
+    "titulo": "Saga del emperador Pilaf",
+    "categoria": "historia",
+    "imagen": "images/historia/portada_saga/Saga_EmperadorPilaf.png",
+    "alt": "Saga del emperador Pilaf"
+  },
+  {
+    "id": "torneo-25",
+    "titulo": "Saga del torneo de artes marciales",
+    "categoria": "historia",
+    "imagen": "images/historia/portada_saga/Saga_Torneo_25_ArtesMarciales.png",
+    "alt": "Saga del torneo de artes marciales"
+  },
+  {
+    "id": "fondo-inicio",
+    "titulo": "Ilustracion de Gohan",
+    "categoria": "fondos",
+    "imagen": "images/fondos/fondo_home.jpg",
+    "alt": "Ilustracion de Gohan",
+    "layout": "tall"
+  },
+  {
+    "id": "trunks",
+    "titulo": "Trunks",
+    "categoria": "personajes",
+    "imagen": "images/personajes/trunks/trunks_base.png",
+    "alt": "Trunks base"
+  },
+  {
+    "id": "gohan",
+    "titulo": "Gohan",
+    "categoria": "personajes",
+    "imagen": "images/personajes/gohan/Adult_gohan.png",
+    "alt": "Gohan adulto"
+  },
+  {
+    "id": "fondo-universo",
+    "titulo": "Fondo del universo",
+    "categoria": "fondos",
+    "imagen": "images/fondos/fondo3.jpg",
+    "alt": "Fondo del universo Dragon Ball",
+    "layout": "wide"
+  },
+  {
+    "id": "majin-buu",
+    "titulo": "Majin Buu",
+    "categoria": "personajes",
+    "imagen": "images/personajes/majin_buu/majin_buu.png",
+    "alt": "Majin Buu"
+  },
+  {
+    "id": "krillin",
+    "titulo": "Krillin",
+    "categoria": "personajes",
+    "imagen": "images/personajes/krillin/krillin_01.png",
+    "alt": "Krillin"
+  },
+  {
+    "id": "red-ribbon",
+    "titulo": "Saga del Ejercito Red Ribbon",
+    "categoria": "historia",
+    "imagen": "images/historia/portada_saga/Saga_del_Ejercito_Red_Ribbon.png",
+    "alt": "Saga del Ejercito Red Ribbon"
+  }
+]
